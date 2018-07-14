@@ -10,3 +10,4 @@ require_once("planet.php");
 require_once("building.php");
 require_once("XWSship.php");
 require_once("OperationBase.php");
+require_once("mission.php");
