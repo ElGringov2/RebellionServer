@@ -4,7 +4,7 @@ require_once("class.php");
 function FillDB()
 {
 
-    srand(1);
+    srand(3);
 
 
 
@@ -14,20 +14,28 @@ function FillDB()
 
     $planets = DatabaseReadAll("planet", $mysqli);
     foreach ($planets as $planet) {
-        echo "Fakecampaign: {$planet->Name}:<br/>";
         GenerateFakeCampaign($planet->DatabaseID, $mysqli, rand());
     }
+
+    $commandos = DatabaseReadAll("commando", $mysqli);
 
     $user = new User();
     $user->Name = "ElGringo";
     $user->CommanderName = "ElGringo";
     $user->Pass = "Password";
-    $user->ConnectionGUID = "{7B90A1CC-8BA4-4C55-9528-384025380E73}";
+    $user->ConnectionGUID = "{74CE52C9-47A0-4AE2-8A4D-7052C5D97AAE}";
 
 
 
     $id = DatabaseWrite($user, $mysqli);
 
+    $commandoIndex = rand(0, count($commandos) - 1);
+    $commando = $commandos[$commandoIndex];
+    $commando->OwnerID = $id;
+    $commando->Location = $planets[rand(0, count($planets) - 1)]->DatabaseID;
+    DatabaseWrite($commando, $mysqli);
+    unset($commandos[$commandoIndex]);
+    $commandos = array_values($commandos);
 
     $operationbase = new OperationBase();
     $operationbase->PlanetID = rand(2, $count);;
@@ -58,6 +66,13 @@ function FillDB()
         $operationbase->TowerControlRange = 3;
         $operationbase->TotalCapacity = 24;
         DatabaseWrite($operationbase, $mysqli);
+        $commandoIndex = rand(0, count($commandos) - 1);
+        $commando = $commandos[$commandoIndex];
+        $commando->OwnerID = $id;
+        $commando->Location = $planets[rand(0, count($planets) - 1)]->DatabaseID;
+        DatabaseWrite($commando, $mysqli);
+        unset($commandos[$commandoIndex]);
+        $commandos = array_values($commandos);
     }
 
 
@@ -72,14 +87,18 @@ function FillDB()
     }
 
     //squadrons
-    $squadronNames = ["Dianoga", "Rancor", "Sharnaff", "Tauntaun", "Bantha"];
+    $squadronNames = ["Blue", "Brown", "Green", "Purple", "Red", "Turquoise", "Yellow"];
+    $ownerCount = 0;
     $flights = ["Au sol", "Vol 1", "Vol 2"];
     $ships = DatabaseReadAll("xwsship", $mysqli);
     $users = DatabaseReadAll("user", $mysqli);
     foreach ($squadronNames as $squadronName) {
-        $owner = $users[rand(0, count($users) - 1)]->DatabaseID;
+        $ownerCount++;
+        if ($ownerCount == count($users) - 1)
+            $ownerCount = 0;
+        $owner = $users[$ownerCount]->DatabaseID;
         foreach ($flights as $flight) {
-            $location = rand(1, $count);
+            $location = $planets[rand(0, count($planets) - 1)]->DatabaseID;
             for ($i = 0; $i <= 3; $i++) {
                 $pilot = new Pilot();
                 $pilot->Name = GenerateName(rand());
@@ -132,8 +151,7 @@ function GenerateFakeCampaign($planetID, $mysqli, $seed)
         if ($state == 0) { //non démarré
             if ($iRow == 1)
                 $Mission->State = 0;
-        }
-        else if ($state >= 1) {//en cours/echouée, voir row/col
+        } else if ($state >= 1) {//en cours/echouée, voir row/col
             if ($iRow > $locationRow)
                 $Mission->State = -1;
             else if ($iRow == $locationRow) {
@@ -162,8 +180,7 @@ function GenerateFakeCampaign($planetID, $mysqli, $seed)
             if ($state == 0) { //non démarré
                 if ($iRow == 1)
                     $Mission->State = 0;
-            }
-            else if ($state >= 1) {//en cours/echouée, voir row/col
+            } else if ($state >= 1) {//en cours/echouée, voir row/col
                 if ($iRow > $locationRow)
                     $Mission->State = -1;
                 else if ($iRow == $locationRow) {
@@ -184,7 +201,6 @@ function GenerateFakeCampaign($planetID, $mysqli, $seed)
 
 
     }
-    echo "<br/>";
 
 
 

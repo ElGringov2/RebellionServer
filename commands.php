@@ -10,6 +10,7 @@ require_once("FakeDatabaseValues.php");
 if (isset($_GET["fakedb"])) {
     CreateDatabases();
     UpdateShips();
+    UpdateCommandos();
     FillDB();
     echo "FakeDB filled.<br/><br/>";
 }
@@ -141,6 +142,19 @@ function GenerateCampaign($planetID, $mysqli, $seed)
     }
 
 
+
+}
+
+
+function UpdateCommandos() {
+
+    $names = ["Diala Passil", "Fenn Signis", "Gaarkhan", "Gideon Argus", "Jyn Odan", "Mak Eshka'rey", "Biv Bodhrik", "Saska Teft", "Loku Kanoloa", "MHD-19", "Verena Talos", "Drokkatta", "Jarrod Kelvin", "Ko-Tun Feralo"];
+
+    foreach ($names as $name) {
+        $commando = new Commando();
+        $commando->Name = $name;
+        DatabaseWrite($commando, GetMySQLConnection());
+    }
 
 }
 ?>

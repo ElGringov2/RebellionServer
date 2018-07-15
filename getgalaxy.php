@@ -4,7 +4,12 @@ require_once("class.php");
 srand(1);
 
 $mysqli = GetMySQLConnection();
-$user = DatabaseRead('user', $mysqli, "connectionguid='" . $_POST["guid"] . "'");
+
+
+if (isset($_GET["debug"]))
+    $user = DatabaseRead('user', $mysqli, "id='" . $_GET["user"] . "'");
+else
+    $user = DatabaseRead('user', $mysqli, "connectionguid='" . $_POST["guid"] . "'");
 
 $xml = "<galaxy><planets>";
 
@@ -27,32 +32,58 @@ foreach ($planets as $planet) {
     $knownPlanet = false;
     $flight = "";
     $offset = 0;
-    $assets = DatabaseReadAll("pilot", $mysqli, "location='{$planet->DatabaseID}' and owner='{$user->DatabaseID}'");
+    $assets = DatabaseReadAll("pilot", $mysqli, "location='{$planet->DatabaseID}' and owner='{$user->DatabaseID}'  ORDER BY squadron ASC, flight ASC");
     foreach ($assets as $asset) {
         $knownPlanet = true;
-        if ($asset->Flight != $flight) {
-            $flight = $asset->Flight;
+        if ($asset->Flight." ".$asset->Squadron != $flight) {
+            $flight = $asset->Flight." ".$asset->Squadron;
             $fullName = $asset->Squadron . " " . $asset->Flight;
-            $icons .= "<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./pilot.png' />";
+            $color = strtolower($asset->Squadron);
+            $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_$color.png' />";
             $offset += 32;
         }
     }
+
+    $assets = DatabaseReadAll("commando", $mysqli, "location='{$planet->DatabaseID}' and owner='{$user->DatabaseID}'");
+    foreach ($assets as $asset) {
+        $knownPlanet = true;
+        
+
+            $icons .= "\n<icon name=\"{$asset->Name}\" x='$x' y='$y' offset='$offset' icon='{$asset->GetPortrait()}' />";
+            $offset += 32;
+        
+    }
     $base = DatabaseRead("operationbase", $mysqli, "planetid='{$planet->DatabaseID}' and owner='{$user->DatabaseID}'");
     if ($base != null) {
-        $icons .= "<icon name=\"Votre base d'opération\" x ='$x' y='$y' offset='$offset' icon='./base.png' />";
+        $icons .= "\n<icon name=\"Votre base d'opération\" x ='$x' y='$y' offset='$offset' icon='./base.png' />";
         $offset += 32;
     }
     $flight = "";
 
     if ($knownPlanet) {
-        $assets = DatabaseReadAll("pilot", $mysqli, "location='{$planet->DatabaseID}' and owner!='{$user->DatabaseID}'");
+        $assets = DatabaseReadAll("pilot", $mysqli, "location='{$planet->DatabaseID}' and owner!='{$user->DatabaseID}' ORDER BY squadron ASC, flight ASC");
         foreach ($assets as $asset) {
-            if ($asset->Flight != $flight) {
-                $flight = $asset->Flight;
+            if ($asset->Flight." ".$asset->Squadron != $flight) {
+                $flight = $asset->Flight." ".$asset->Squadron;
                 $fullName = $asset->Squadron . " " . $asset->Flight;
-                $icons .= "<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./pilot.png' />";
+                $color = strtolower($asset->Squadron);
+                $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_$color.png' />";
                 $offset += 32;
             }
+        }
+        $base = DatabaseRead("operationbase", $mysqli, "planetid='{$planet->DatabaseID}' and owner!='{$user->DatabaseID}'");
+        if ($base != null) {
+            $icons .= "\n<icon name=\"Une base d'opération\" x ='$x' y='$y' offset='$offset' icon='./base.png' />";
+            $offset += 32;
+        }
+        $assets = DatabaseReadAll("commando", $mysqli, "location='{$planet->DatabaseID}' and owner!='{$user->DatabaseID}'");
+        foreach ($assets as $asset) {
+            $knownPlanet = true;
+            
+    
+                $icons .= "\n<icon name=\"{$asset->Name}\" x='$x' y='$y' offset='$offset' icon='{$asset->GetPortrait()}' />";
+                $offset += 32;
+            
         }
     }
 }

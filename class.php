@@ -11,3 +11,4 @@ require_once("building.php");
 require_once("XWSship.php");
 require_once("OperationBase.php");
 require_once("mission.php");
+require_once("commando.php");

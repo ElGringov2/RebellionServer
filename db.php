@@ -25,6 +25,7 @@ function CreateDatabases()
     CreateTable('upgrade', $mysqli);
     CreateTable('operationbase', $mysqli);
     CreateTable('mission', $mysqli);
+    CreateTable('commando', $mysqli);
 
 
 
@@ -77,9 +78,10 @@ function CreateTable($object, $mysqli)
 
 
 
-function DatabaseReadAll($className, $mysqli, $whereClause = "true")
+function DatabaseReadAll($className, $mysqli, $whereClause = "true", $debug = false)
 {
     $sql = "SELECT * FROM `rebellion_" . strtolower($className) . "` WHERE $whereClause";
+    if ($debug) echo $sql;
     $res = $mysqli->query($sql);
     $array = array();
     while ($row = $res->fetch_assoc()) {

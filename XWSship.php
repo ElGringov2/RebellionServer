@@ -120,6 +120,7 @@ class XWSShip
             "tiesffighter" => "S",
             "tiesilencer" => "$",
             "tiestriker" => "T",
+            "tiereaper" => "T",
             "upsilonclassshuttle" => "U",
             "uwing" => "u",
             "vcx100" => "G",
