@@ -12,6 +12,12 @@ function FillDB()
 
     $count = Planet::CreateGalaxy();
 
+    $planets = DatabaseReadAll("planet", $mysqli);
+    foreach ($planets as $planet) {
+        echo "Fakecampaign: {$planet->Name}:<br/>";
+        GenerateFakeCampaign($planet->DatabaseID, $mysqli, rand());
+    }
+
     $user = new User();
     $user->Name = "ElGringo";
     $user->CommanderName = "ElGringo";
@@ -100,6 +106,89 @@ function FillDB()
 
 
 
+function GenerateFakeCampaign($planetID, $mysqli, $seed)
+{
+    srand($seed);
+
+    $mainGame = rand(0, 2);
+
+    $state = rand(0, 2);
+    $locationRow = rand(1, 5);
+
+
+
+    for ($iRow = 1; $iRow < 5; $iRow++) {
+
+        $otherMission = rand(2, 4);
+        $locationCol = rand(1, $otherMission);
+
+        $allMissions = Mission::GetAllMission();
+        $mainMissions = Mission::GetAllMission($mainGame);
+        $Mission = $mainMissions[rand(0, count($mainMissions) - 1)];
+        $Mission->Row = $iRow;
+        $Mission->Col = 1;
+        $Mission->PlanetID = $planetID;
+
+        if ($state == 0) { //non démarré
+            if ($iRow == 1)
+                $Mission->State = 0;
+        }
+        else if ($state >= 1) {//en cours/echouée, voir row/col
+            if ($iRow > $locationRow)
+                $Mission->State = -1;
+            else if ($iRow == $locationRow) {
+                if ($locationCol == 1) {
+                    $Mission->State = ($state == 1 ? 2 : 4);
+                } else
+                    $Mission->State = 1;
+            } else {
+                if ($locationCol == 1)
+                    $Mission->State = 3;
+                else
+                    $Mission->State = 1;
+            }
+        }
+
+
+        DatabaseWrite($Mission, $mysqli);
+
+
+
+        for ($iCol = 2; $iCol <= $otherMission; $iCol++) {
+            $Mission = $allMissions[rand(0, count($allMissions) - 1)];
+            $Mission->Row = $iRow;
+            $Mission->Col = $iCol;
+            $Mission->PlanetID = $planetID;
+            if ($state == 0) { //non démarré
+                if ($iRow == 1)
+                    $Mission->State = 0;
+            }
+            else if ($state >= 1) {//en cours/echouée, voir row/col
+                if ($iRow > $locationRow)
+                    $Mission->State = -1;
+                else if ($iRow == $locationRow) {
+                    if ($locationCol == $iCol) {
+                        $Mission->State = ($state == 1 ? 2 : 4);
+                    } else
+                        $Mission->State = 1;
+                } else {
+                    if ($locationCol == $iCol)
+                        $Mission->State = 3;
+                    else
+                        $Mission->State = 1;
+                }
+            }
+            DatabaseWrite($Mission, $mysqli);
+
+        }
+
+
+    }
+    echo "<br/>";
+
+
+
+}
 
 
 

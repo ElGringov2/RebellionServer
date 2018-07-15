@@ -28,6 +28,7 @@ function ToXML($object)
 
 
     }
+
     foreach ($methods as $method) {
         $name = ReadDocAttribute($method, "XmlAttribute");
         if ($name != "") {

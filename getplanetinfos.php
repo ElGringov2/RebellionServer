@@ -44,5 +44,13 @@ if ($containsAssets) {
 
 
 echo "</otherassets>";
+$campaign = DatabaseReadAll("mission", $mysqli, "planet='".$_POST["planetGUID"]."' ORDER BY row DESC, col ASC");
+
+echo "<campaign>";
+foreach ($campaign as $mission) {
+    echo ToXML($mission);
+}
+echo "</campaign>";
+
 echo "</planet>";
 ?>

@@ -24,6 +24,7 @@ function CreateDatabases()
     CreateTable('xwsship', $mysqli);
     CreateTable('upgrade', $mysqli);
     CreateTable('operationbase', $mysqli);
+    CreateTable('mission', $mysqli);
 
 
 

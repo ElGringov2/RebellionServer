@@ -29,8 +29,9 @@ if (isset($_GET["campaign"])) {
     $mysqli = GetMySQLConnection();
     CreateTable("mission", $mysqli);
     $planets = DatabaseReadAll("planet", $mysqli);
+    srand(1);
     foreach ($planets as $planet) {
-        GenerateCampaign($planet->DatabaseID, $mysqli);
+        GenerateCampaign($planet->DatabaseID, $mysqli, rand());
     }
     echo "Campagne OK";
 }
@@ -106,27 +107,37 @@ function UpdateShips()
 }
 
 
-function GenerateCampaign($planetID, $mysqli)
+function GenerateCampaign($planetID, $mysqli, $seed)
 {
-    srand(1);
+    srand($seed);
+
+    $mainGame = rand(0,2);
+
     for ($iRow = 1; $iRow < 5; $iRow++) {
         $allMissions = Mission::GetAllMission();
-        $mainMissions = Mission::GetAllMission(0);
+        $mainMissions = Mission::GetAllMission($mainGame);
         $mainMission = $mainMissions[rand(0, count($mainMissions) - 1)];
         $mainMission->Row = $iRow;
         $mainMission->Col = 1;
         $mainMission->PlanetID = $planetID;
+        if ($iRow == 1)
+            $mainMission->State = 0;
         DatabaseWrite($mainMission, $mysqli);
-        
+
 
         $otherMission = rand(2, 4);
         for ($iCol = 2; $iCol <= $otherMission; $iCol++) {
             $Mission = $allMissions[rand(0, count($allMissions) - 1)];
             $Mission->Row = $iRow;
             $Mission->Col = $iCol;
+            $Mission->PlanetID = $planetID;
+            if ($iRow == 1)
+                $Mission->State = 0;
             DatabaseWrite($Mission, $mysqli);
 
         }
+
+        
     }
 
 

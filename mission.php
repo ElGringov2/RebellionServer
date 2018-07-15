@@ -27,7 +27,7 @@ class Mission
      * @DatabaseType text
      * @DatabaseName reward   
      */
-    public $Reward = "";
+    public $Reward = "-";
 
     /**
      * @DatabaseType int(2)
@@ -37,13 +37,13 @@ class Mission
 
     /**
      * @DatabaseType int(2)
-     * @DatabaseName col
+     * @DatabaseName row
      */
     public $Row = 0;
 
     /**
      * @DatabaseType int(2)
-     * @DatabaseName row
+     * @DatabaseName col
      */
     public $Col = 0;
 
@@ -53,6 +53,33 @@ class Mission
      * @DatabaseName planet
      */
     public $PlanetID = 0;
+
+    // /**
+    //  * @XmlAttribute Color
+    //  */
+    // function Color()
+    // {
+    //     if ($this->State == 4)
+    //         return "danger";
+    //     if ($this->State == 3)
+    //         return "success";
+    //     if ($this->MissionType == 0)
+    //         return "warning";
+    //     if ($this->MissionType == 1)
+    //         return "primary";
+    //     return "secondary";
+    // }
+
+    // /**
+    //  * @XmlAttribute Border
+    //  */
+    // function BorderType()
+    // {
+    //     if ($this->State == 0)
+    //         return "bg-dark border border";
+    //     else
+    //         return "bg";
+    // }
 
 
 
@@ -81,6 +108,33 @@ class Mission
      * */
     public $State = -1;
 
+    /**
+     * @XmlAttribute class
+     */
+    function GetClass()
+    {
+        $mission = "";
+        if ($this->State == -1 || $this->State == 1)
+            return "mission-disable";
+        if ($this->State == 3)
+            return "mission-success";
+        if ($this->State == 4)
+            return "mission-failed";
+        if ($this->State == 0)
+            $mission = "border border-warning";
+        if ($this->State == 2)
+            $mission = "border border-primary";
+
+
+        if ($this->MissionType == 0)
+            return "mission-xwing $mission ";
+        if ($this->MissionType == 1)
+            return "mission-legion $mission ";
+        if ($this->MissionType == 2)
+            return "mission-assault $mission";
+
+
+    }
 
 
     public static function GetAllMission($missionType = -1)
