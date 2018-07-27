@@ -71,10 +71,34 @@ class Commando
   public $MainWeapon;
   public $MainArmor;
 
+
+  /**
+   * @DatabaseType float(1, 19)
+   * @DatabaseName tech
+   */
+  public $Tech = 0;
   
+  /**
+   * @DatabaseType float(1, 19)
+   * @DatabaseName insight
+   */
+  public $Insight = 0;
+
+  /**
+   * @DatabaseType float(1, 19)
+   * @DatabaseName strength
+   */
+  public $Strength = 0;
 
   public $Count = 2;
 
+
+
+  public function GetFullHealth() {
+    if ($this->MainArmor == null)
+    return $this->Health;
+    return $this->Health + $this->MainArmor->Health;
+  }
 
   public function GetAllBlackDefense()
   {

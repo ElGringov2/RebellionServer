@@ -49,23 +49,21 @@ function CreateTable($object, $mysqli)
     $properties = $reflector->getProperties();
 
     foreach ($properties as $property) {
+
+        if (ReadDocAttribute($property, "DatabaseIgnore"))
+            continue;
+
         $name = ReadDocAttribute($property, "DatabaseName");
         if ($name == "")
             $name = $property->getName();
 
-        // if (preg_match('/@DatabaseName\s+([^\s]+)/', $property->getDocComment(), $matches)) {
-        //     list(, $name) = $matches;
-        // }
+
         $type = ReadDocAttribute($property, "DatabaseType");
         if ($type == "")
             $type = "TEXT";
-        // if (preg_match('/@DatabaseType\s+([^\s]+)/', $property->getDocComment(), $matches)) {
-        //     list(, $type) = $matches;
-        // }
+
         if (ReadDocAttribute($property, "DatabasePrimary"))
-        // if (preg_match('/@DatabasePrimary\s+([^\s]+)/', $property->getDocComment(), $matches)) {
-        $primary = $name;
-        // }
+            $primary = $name;
 
         $sql .= "`" . $name . "` " . $type . " NOT NULL " . ($primary == $name ? "AUTO_INCREMENT" : "") . ",";
 
@@ -113,10 +111,15 @@ function DatabaseConvert($className, $row)
 
 
     foreach ($properties as $property) {
+        if (ReadDocAttribute($property, "DatabaseIgnore"))
+            continue;
         $dbName = ReadDocAttribute($property, "DatabaseName");
 
         if (array_key_exists($dbName, $row)) {
-            $property->setValue($instance, $row[$dbName]);
+            if (ReadDocAttribute($property, "DatabaseSerialize"))
+                $property->setValue($instance, unserialize($row[$dbName]));
+            else
+                $property->setValue($instance, $row[$dbName]);
         }
     }
 
@@ -143,6 +146,8 @@ function DatabaseWrite($object, $mysqli)
     $sqlNewValues = "";
     $sqlUpdate = "UPDATE `rebellion_" . strtolower(get_class($object)) . "` SET ";
     foreach ($properties as $property) {
+        if (ReadDocAttribute($property, "DatabaseIgnore"))
+            continue;
         if (ReadDocAttribute($property, "DatabasePrimary")) {
             if ($property->getValue($object) == -1) {
                 $new = true;
@@ -150,8 +155,13 @@ function DatabaseWrite($object, $mysqli)
                 $where = " WHERE " . ReadDocAttribute($property, "DatabaseName") . "='" . $property->getValue($object) . "'";
                 $id = $property->getValue($object);
             }
-        }
-        else {
+        } else if (ReadDocAttribute($property, "DatabaseSerialize")) {
+            $text = serialize($property->getValue($object));
+            $sqlUpdate .= "`" . ReadDocAttribute($property, "DatabaseName") . "`='" . $mysqli->real_escape_string($text) . "', ";
+            $sqlNewValues .= "'" . $mysqli->real_escape_string($text) . "', ";
+            $sqlNewLabels .= "`" . ReadDocAttribute($property, "DatabaseName") . "`, ";
+
+        } else {
             $sqlUpdate .= "`" . ReadDocAttribute($property, "DatabaseName") . "`='" . $mysqli->real_escape_string($property->getValue($object)) . "', ";
             $sqlNewLabels .= "`" . ReadDocAttribute($property, "DatabaseName") . "`, ";
             $sqlNewValues .= "'" . $mysqli->real_escape_string($property->getValue($object)) . "', ";

@@ -1,64 +1,113 @@
 <?php
-require("Commando.php");
-require("AssaultEnnemy.php");
-require("AssaultItem.php");
-require("AssaultMission.php");
+require("class.php");
 
 
 
 
-$content = file_get_contents("http://imperial-assault.wikia.com/wiki/Diala_Passil_(Hero)");
+$mission = AssaultMission::GetRandomMission(1);
+
+echo json_encode($mission);
 
 
-$player = new Commando();
-$player->Name = GetString($content, "<h2 class=\"pi-item pi-item-spacing pi-title\">", "</h2>")["value"];
-$healthInfo = GetInt($content, "\"pi-horizontal-group-item pi-data-value pi-font pi-border-color pi-item-spacing\"", "</td>");
-$player->Health = $healthInfo["value"];
-$enduranceInfo = GetInt($content, "\"pi-horizontal-group-item pi-data-value pi-font pi-border-color pi-item-spacing\"", "</td>", $healthInfo["pos"]);
-$player->Endurance = $enduranceInfo["value"];
-$speedInfo = GetInt($content, "\"pi-horizontal-group-item pi-data-value pi-font pi-border-color pi-item-spacing\"", "</td>", $enduranceInfo["pos"]);
-$player->Move = $speedInfo["value"];
-if (strpos($content, "alt=\"Black Die\"") != false)
-    $player->DefenseBlack = 1;
-else
-    $player->DefenseWhite = 1;
-
-$strSkillToFind = "<td class=\"pi-horizontal-group-item pi-data-value pi-font pi-border-color pi-item-spacing\"><a href=\"/wiki/Dice\"";
-$endSkillToFind = "</noscript></a></td>";
-$start = 0;
-
-
-$start = strpos($content, $strSkillToFind, $start);
-$end = strpos($content, $endSkillToFind, $start);
-$lineContent= substr($content, $start, $end - $start);
-
-
-
-var_dump($player);
 return;
 
+echo "Autoresolver - tests<br/>";
 
-function GetString($content, $strToFind, $endStrToFind, int $offset = 0)
-{
-    $pos = strpos($content, $strToFind, $offset);
-    $pos = strpos($content, ">", $pos) + 1;
-    $endPos = strpos($content, $endStrToFind, $pos);
-    return array("value" => trim(substr($content, $pos, $endPos - $pos)), "pos" => $pos);
-
-}
-
-function GetInt($content, $strToFind, $endStrToFind, int $offset = 0)
-{
-    $result = GetString($content, $strToFind, $endStrToFind, $offset);
-    return array("value" => intval($result["value"]), "pos" => $result["pos"]);
-}
-
-
-$players = Commando::GetAllCommandos();
+echo "srand=1<br/>";
 srand(1);
 
 
 $threatExperience = 3;
+$allCommandos = GetAssaultCommandos();
+
+
+$players = array();
+
+echo "Joueurs: ";
+
+
+$index = rand(0, count($allCommandos) - 1);
+$players[] = $allCommandos[$index];
+echo $allCommandos[$index]->Name . ", ";
+array_splice($allCommandos, $index, 1);
+
+$index = rand(0, count($allCommandos) - 1);
+$players[] = $allCommandos[$index];
+echo $allCommandos[$index]->Name . ", ";
+array_splice($allCommandos, $index, 1);
+
+$index = rand(0, count($allCommandos) - 1);
+$players[] = $allCommandos[$index];
+echo $allCommandos[$index]->Name . " ";
+array_splice($allCommandos, $index, 1);
+
+$index = rand(0, count($allCommandos) - 1);
+$players[] = $allCommandos[$index];
+echo " et " . $allCommandos[$index]->Name . ".<br/>";
+
+$missionID = rand();
+$mission = AssaultMission::GetRandomMission($missionID);
+echo "Mission n°$missionID: tour: {$mission->Turn}, objectifs à réaliser: {$mission->ObjectivePoints}, taille de la zone: {$mission->Size} unitées.<br/>Ennemis présent: ";
+foreach ($mission->Ennemies as $ennemy) {
+    if ($ennemy->TotalCount > 0)
+        echo "<ul>{$ennemy->Name} x{$ennemy->Count}</ul>";
+}
+echo "<br/>Ennemis en attente:";
+foreach ($mission->Ennemies as $ennemy) {
+    if ($ennemy->TotalCount == 0)
+        echo "<ul>{$ennemy->Name} x{$ennemy->Count}</ul>";
+}
+
+$iSuccess = 0;
+
+$tentative = 50;
+echo "Début des $tentative tentatives:<br/>";
+
+for ($i = 1; $i <= $tentative; $i++) {
+
+     //reinit des ennemis
+    $mission = AssaultMission::GetRandomMission($missionID);
+    //reinit des joueurs
+    foreach ($players as $player) {
+        $player->Count = 2;
+        $player->ActualHealth = $player->Health;
+    }
+
+        ob_start();
+    srand($i);
+
+    $result = AutoResolve($players, 1, 2, $mission);
+
+        ob_end_clean();
+
+
+    echo "<br>";
+    echo $result->result;
+
+    echo ": " . $result->objectives . "/" . $mission->ObjectivePoints;
+
+    if ($result->result == "reussite") $iSuccess++;
+
+}
+echo "OK. Taux de réussite: " . (int)($iSuccess / $tentative * 100) . "%<br>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return;
 
 for ($i = 0; $i < 8; $i++) {
 
@@ -72,7 +121,6 @@ for ($i = 0; $i < 8; $i++) {
     $startThreat = rand(1, 2) * $threatLevel;
 
     $mission = AssaultMission::GetRandomMission($i);
-    var_dump($mission);
     echo "mission: niveau de menace: $threatLevel, tour: {$mission->Turn}, points d'objectifs: {$mission->ObjectivePoints}:<br>";
 
     for ($iTry = 0; $iTry < 20; $iTry++) {
@@ -84,7 +132,7 @@ for ($i = 0; $i < 8; $i++) {
 
 
 
-        $result = AutoResolve($players, $ennemies, $threatLevel, $startThreat, $mission->Turn, $mission->ObjectivePoints);
+        $result = AutoResolve($players, $ennemies, $threatLevel, $startThreat, $mission);
         foreach ($players as $player) {
             $player->Count = 2;
             $player->ActualHealth = $player->Health;
@@ -125,40 +173,32 @@ var_dump($players);
  * @param int $threat starting threat
  * @param AssaultMission $mission Mission to be runned
  */
-function AutoResolve(array $Players, array $Ennemies, int $ThreatPerRound, int $threat, AssaultMission $mission) : stdClass
+function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMission $mission) : stdClass
 {
-    echo "<br/>Autorunning {$mission->Name}";
 
+    echo "<br/>Autorunning {$mission->Name}";
+    $Ennemies = $mission->Ennemies;
     $movePerObjectif = $mission->Size / $mission->ObjectivePoints;
 
 
-    $objectiveNeeded = $mission->Objective;
+    $objectiveNeeded = $mission->ObjectivePoints;
     $objective = 0;
+    $move = array();
+
+    foreach ($Players as $pl) {
+        $move[$pl->Name] = 0;
+    }
+
     for ($i = 1; $i <= $mission->Turn; $i++) {
 
         $idPlayer = 0;
         $idEnnemy = 0;
 
 
-
-
-
-        // $players = array();
-        // $ennemies = array();
-
-
-        // foreach ($Players as $pl)
-        //     if ($pl->Count > 0)
-        //     $players[] = $pl;
-        // foreach ($Ennemies as $pl)
-        //     if ($pl->Count > 0)
-        //     $ennemies[] = $pl;
-
-
         shuffle($Ennemies);
         shuffle($Players);
 
-        $move = array();
+
 
         echo "<hr>round $i:";
         while ($idPlayer < count($Players) || $idEnnemy < count($Ennemies)) {
@@ -177,39 +217,86 @@ function AutoResolve(array $Players, array $Ennemies, int $ThreatPerRound, int $
 
 
                     //4 actions possible: déplacement - attaque - repos - objectif
-
-
-
-                    $attackOrObjective = rand(1, 4 - (2 * $PlayerAction));
-                    if ($attackOrObjective > 2) {
-                        echo "<br>Déplacement:";
-                        $move[$actor->Name] += $actor->Move;
-                        echo " {$move[$actor->Name]}/{$mission->Size}";
-                    } else if ($attackOrObjective == 2) {
-                        echo "<br>Attaque:";
-                        $target = GetBestTarget($Ennemies, rand());
-                        if ($target == null) {
-                            echo "<br>Plus de cible. Objectif à la place.";
-                            $objective++;
-                        } else
-                            Resolve($actor, $target, rand(), $actor->GetLevel(), 1);
-                    } else if ($attackOrObjective == 1) {
-                        $objective++;
-                        echo "<br>Objectif.";
+                    
+                    //déplacement
+                    $ProbabilityMove = (2 - $PlayerAction); //Par défaut, 6/3 points .
+                    if ($movePerObjectif * ($objective + 1) > $move[$actor->Name]) {
+                        $ProbabilityMove += 2; //Si on ne peux pas faire d'objectif, il faut se déplacer.
                     }
+                    if ($objective >= $objectiveNeeded)
+                        $ProbabilityMove = 6; // 6/6 poins si l'objectif est atteint.
+
+                    //Objectifs
+                    $ProbabilityObjective = 0; //Par défaut, 0/0 points.
+                    if ($movePerObjectif * ($objective + 1) < $move[$actor->Name]) {
+                        $ProbabilityObjective = $PlayerAction * 6; // 0/3 points si à portée.
+                    }
+                    if ($objective >= $objectiveNeeded)
+                        $ProbabilityObjective = 0; // 0/0 points si l'objectif est réussi.
+
+                    $ProbabilityRest = 0; // Par défaut, 0/0 points.
+                    if ($actor->ActualHealth < 6)
+                        $ProbabilityRest += 3 * (1 - $PlayerAction); //Ca va mal, 3/0 points.
+                    if ($actor->ActualHealth < 3)
+                        $ProbabilityRest += 3 * (1 - $PlayerAction); //Ca va très mal, 6/0 points.
+
+                    $ProbabilityAttack = ($PlayerAction + 1) * 3; // Par défaut, 3/6. L'inverse du déplacement.
+                    $someTarget = GetBestTarget($Ennemies, rand());
+                    if ($someTarget == null) $ProbabilityAttack = 0; //Pas d'attaque si pas de cible...
+
+                    if ($objective >= $objectiveNeeded)
+                        $ProbabilityAttack = 0; // 0/0 points si l'objectif est réussi.
+
+
+                    $selectedAction = rand(1, $ProbabilityAttack + $ProbabilityMove + $ProbabilityObjective + $ProbabilityRest);
+                    echo "<br/>Attack=$ProbabilityAttack, Move=$ProbabilityMove, Objective=$ProbabilityObjective, Rest=$ProbabilityRest. Selected=$selectedAction";
+
+                    if ($selectedAction <= $ProbabilityAttack) {
+                        echo "<br>Attaque.";
+                        $target = GetBestTarget($Ennemies, rand());
+                        Resolve($actor, $target, rand(), $actor->GetLevel(), 1);
+                    } else if ($selectedAction <= $ProbabilityAttack + $ProbabilityMove) {
+                        echo "<br>Déplacement: ";
+                        $move[$actor->Name] += $actor->Move;
+                        echo $move[$actor->Name] . "cases.";
+                    } else if ($selectedAction <= $ProbabilityAttack + $ProbabilityMove + $ProbabilityRest) {
+                        $hp = rand(2, 5);
+                        echo "<br>Repos. Gain de $hp";
+                        $actor->ActualHealth += $hp;
+                    } else {
+                        echo "<br>Objectif.";
+                        $objective++;
+                    }
+                    // $attackOrObjective = rand(1, 4 - (2 * $PlayerAction));
+                    // if ($attackOrObjective > 2) {
+                    //     echo "<br>Déplacement:";
+                    //     $move[$actor->Name] += $actor->Move;
+                    //     echo " {$move[$actor->Name]}/{$mission->Size}";
+                    // } else if ($attackOrObjective == 2) {
+                    //     echo "<br>Attaque:";
+                    //     $target = GetBestTarget($Ennemies, rand());
+                    //     if ($target == null) {
+                    //         echo "<br>Plus de cible. Objectif à la place.";
+                    //         $objective++;
+                    //     } else
+                    //         Resolve($actor, $target, rand(), $actor->GetLevel(), 1);
+                    // } else if ($attackOrObjective == 1) {
+                    //     $objective++;
+                    //     echo "<br>Objectif.";
+                    // }
                 }
                 $idPlayer++;
 
             }
             if ($objective >= $objectiveNeeded) {
-                echo "<br>Objective done.";
+                echo "<br>Objective done";
                 $sizeOk = true;
-                foreach ($player as $pl) {
+                foreach ($Players as $pl) {
                     if ($move[$pl->Name] < $mission->Size)
                         $sizeOk = false;
                 }
                 if (!$sizeOk) {
-                    echo "player on board.";
+                    echo " but player on board.";
                 } else
                     break;
             }
@@ -290,7 +377,7 @@ function AutoResolve(array $Players, array $Ennemies, int $ThreatPerRound, int $
 
     }
 
-    return (object)array("result" => ($objective >= $objectiveNeeded ? "reussite" : "echec"), "players" => $Players);
+    return (object)array("result" => ($objective >= $objectiveNeeded ? "reussite" : "echec"), "players" => $Players, "objectives" => $objective);
 }
 
 function Resolve($actor, $target, $seed, $attackerLevel = 1, $defenderLevel = 1)
@@ -391,12 +478,31 @@ function Resolve($actor, $target, $seed, $attackerLevel = 1, $defenderLevel = 1)
 
     if ($bestSurge < 0) $bestSurge = 0;
 
+    $DamageSurge = $bestSurge;
+    if ($DamageSurge > $actor->MainWeapon->SurgeToDoubleDamage)
+        $DamageSurge = $actor->MainWeapon->SurgeToDoubleDamage;
+    $bestSurge -= $DamageSurge;
+    $DamageSurge *= 2;
+
 
     $DamageSurge = $bestSurge;
     if ($DamageSurge > $actor->MainWeapon->SurgeToDamage)
         $DamageSurge = $actor->MainWeapon->SurgeToDamage;
     $bestSurge -= $DamageSurge;
 
+
+    $TriplePierceSurge = $bestSurge;
+    if ($TriplePierceSurge > $actor->MainWeapon->SurgeToTriplePierce)
+        $TriplePierceSurge = $actor->MainWeapon->SurgeToTriplePierce;
+
+    $bestSurge -= $TriplePierceSurge;
+
+
+    $DoublePierceSurge = $bestSurge;
+    if ($DoublePierceSurge > $actor->MainWeapon->SurgeToDoublePierce)
+        $DoublePierceSurge = $actor->MainWeapon->SurgeToDoublePierce;
+
+    $bestSurge -= $DoublePierceSurge;
 
     $PierceSurge = $bestSurge;
     if ($PierceSurge > $actor->MainWeapon->SurgeToPierce)
@@ -406,7 +512,7 @@ function Resolve($actor, $target, $seed, $attackerLevel = 1, $defenderLevel = 1)
 
 
     $bestBlock -= $actor->MainWeapon->Pierce;
-    $bestBlock -= $PierceSurge;
+    $bestBlock -= $PierceSurge + ($DoublePierceSurge * 2) + ($TriplePierceSurge * 3);
 
     $bestDamage -= $bestBlock;
     $bestDamage += $DamageSurge;
@@ -446,6 +552,9 @@ function GetBestPlayerTarget($players, $Seed)
     foreach ($players as $possibleTarget)
         if ($possibleTarget->ActualHealth > 0)
         $targets[] = $possibleTarget;
+
+    if (count($targets) == 0)
+        return null;
     $target = rand(0, count($targets) - 1);
 
     return $targets[$target];
@@ -472,7 +581,7 @@ function GetBestTarget($ennemies, $seed)
     }
 
 
-
+    if (count($array) == 0) return null;
 
     usort($array, "CompareScores");
 

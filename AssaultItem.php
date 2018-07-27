@@ -67,9 +67,24 @@ class AssaultItem
     public $SurgeToDamage = 0;
     /**
      * @DatabaseType int(2)
+     * @DatabaseName surgedoubledamage
+     */
+    public $SurgeToDoubleDamage = 0;    
+    /**
+     * @DatabaseType int(2)
      * @DatabaseName surgepierce
      */
     public $SurgeToPierce = 0;
+    /**
+     * @DatabaseType int(2)
+     * @DatabaseName surgedoublepierce
+     */
+    public $SurgeToDoublePierce = 0;
+    /**
+     * @DatabaseType int(2)
+     * @DatabaseName surgetriplepierce
+     */
+    public $SurgeToTriplePierce = 0;        
     /**
      * @DatabaseType int(2)
      * @DatabaseName damage
@@ -81,6 +96,11 @@ class AssaultItem
      */
     public $Pierce = 0;
 
+    /**
+     * @DatabaseType int(2)
+     * @DatabaseName health
+     */
+    public $Health = 0;
 
     static function create($name, $blue, $red, $yellow, $green)
     {

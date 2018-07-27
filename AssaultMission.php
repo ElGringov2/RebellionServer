@@ -1,6 +1,7 @@
 <?php
 
-class AssaultMission {
+class AssaultMission
+{
 
 
   /**
@@ -17,39 +18,65 @@ class AssaultMission {
    */
   public $DatabaseID = -1;
 
+  /**
+   * @DatabaseName ennemies
+   * @DatabaseSerialize
+   * @var array
+   */
   public $Ennemies;
 
-    /**
+  /**
    * @DatabaseType int(3)
    * @DatabaseName size
    */
   public $Size;
 
-      /**
+  /**
    * @DatabaseType int(2)
    * @DatabaseName turn
    */
   public $Turn;
 
-      /**
+  /**
    * @DatabaseType int(2)
    * @DatabaseName objective
    */
   public $ObjectivePoints;
 
+  /**
+   * @DatabaseType int(2)
+   * @DatabaseName startingthreat
+   */
+  public $StartingThreat = 1;
 
 
-  public static function GetRandomMission($seed)
+  public static function GetRandomMission($seed) : AssaultMission
   {
     srand($seed);
     $mission = new AssaultMission();
     $mission->Name = "Mission $seed";
-    $mission->Size = rand(8, 25);
-    $mission->Turn = (int)($mission->Size / 2);
-    $mission->ObjectivePoints = rand(1, 4);
-    $mission->Ennemies = EnnemiForMission::GetRandomMission((int)($mission->Size / 8), rand());
+    $mission->Size = rand(15, 40);
+    $mission->Turn = (int)($mission->Size / 3);
+    $mission->ObjectivePoints = (int)($mission->Turn / 2);
+    $mission->Ennemies = EnnemiForMission::GetRandomEnnemiesForMission((int)($mission->Size / 8), rand());
 
 
+    return $mission;
+  }
+
+  public static function GetMission(int $i) : AssaultMission
+  {
+    $mission = new AssaultMission();
+    $mission->Size = 23;
+    $mission->Name = "Ingérence impériale";
+    $mission->ObjectivePoints = 2;
+    $mission->Turn = 99;
+    $mission->StartingThreat = 3;
+
+    $mission->Ennemies = array();
+
+    
+    
     return $mission;
   }
 

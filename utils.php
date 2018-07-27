@@ -46,7 +46,26 @@ function ToXML($object)
 
 
 
+function JSONToObject(string $ObjectName, array $data) {
+    $reflector = new ReflectionClass($ObjectName);
+    $instance = $reflector->newInstance();
+    $properties = $reflector->getProperties();
 
+    //$data = json_decode($JSON);
+
+    foreach ($properties as $property) {
+       
+
+        if (array_key_exists($property->name, $data)) {
+            
+                $property->setValue($instance, $data[$property->name]);
+        }
+    }
+
+
+    return $instance;
+
+}
 
 
 

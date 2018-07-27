@@ -17,7 +17,10 @@ class AssaultEnnemy
   public $Name;
 
 
-  public $Count;
+  /**
+   * @DatabaseIgnore
+   */
+  public $Count = 0;
 
   /**
    * @DatabaseName count
@@ -44,23 +47,36 @@ class AssaultEnnemy
    */
   public $Health;
 
-  public $ActualHealth;
 
+  /**
+   * @DatabaseIgnore
+   */
+  public $ActualHealth = 0;
+
+  /**
+   * @DatabaseName weapon
+   * @DatabaseSerialize
+   */
   public $MainWeapon = null;
 
-    /**
+  /**
    * @DatabaseName defenceblack
    * @DaatabaseType int(2)
    */
-public $DefenseBlack = 0;
+  public $DefenseBlack = 0;
 
-   /**
+  /**
    * @DatabaseName defensewhite
    * @DaatabaseType int(2)
    */
   public $DefenseWhite = 0;
 
 
+  /**
+   * @DatabaseName elite
+   * @DaatabaseType int(1)
+   */
+  public $Elite = 0;
 
 
   public function GetAllBlackDefense()
@@ -109,6 +125,8 @@ public $DefenseBlack = 0;
     $array[] = $e;
 
 
+
+
     return $array;
 
 
@@ -133,7 +151,7 @@ class EnnemiForMission
 
 
 
-  static function GetRandomMission($size, $seed)
+  static function GetRandomEnnemiesForMission($size, $seed) : array
   {
     srand($seed);
 
@@ -143,15 +161,31 @@ class EnnemiForMission
     $alive = rand(1, $size);
     $stock = rand(1, $size);
     for ($i = 0; $i < $alive; $i++) {
-      $array[] = $all[rand(0, count($all) - 1)];
+      $index = rand(0, count($all) - 1);
+      if (count($all) != 0) {
+        $ennemy = clone $all[$index];
+        array_splice($all, $index, 1);
+        $array[] = $ennemy;
+      }
     }
     for ($i = 0; $i < $stock; $i++) {
-      $ennemy = $all[rand(0, count($all) - 1)];
-      $ennemy->TotalCount = 0;
-      $array[] = $ennemy;
+      $index = rand(0, count($all) - 1);
+      if (count($all) != 0) {
+        $ennemy = clone $all[$index];
+        array_splice($all, $index, 1);
+        $ennemy->TotalCount = 0;
+        $array[] = $ennemy;
+      }
     }
 
-    return $array;
+
+    $resultArray = array();
+
+    foreach ($array as $item) {
+      $resultArray[] = array("dbid" => $item->DatabaseID, "count" => $item->TotalCount);
+    }
+
+    return $resultArray;
 
   }
 }

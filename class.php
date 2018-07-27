@@ -24,3 +24,7 @@ require_once("commando.php");
 require_once("AssaultEnnemy.php");
 require_once("AssaultMission.php");
 require_once("AssaultItem.php");
+require_once("assault_core.php");
+
+
+?>
