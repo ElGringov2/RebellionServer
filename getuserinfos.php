@@ -2,6 +2,8 @@
 require_once("class.php");
 
 
+
+$mysqli = GetMySQLConnection();
 $user = DatabaseRead('user', $mysqli, "connectionguid='" . $_POST["guid"]."'");
 
 

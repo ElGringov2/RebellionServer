@@ -26,6 +26,10 @@ function CreateDatabases()
     CreateTable('operationbase', $mysqli);
     CreateTable('mission', $mysqli);
     CreateTable('commando', $mysqli);
+    CreateTable('legion', $mysqli);
+    CreateTable('assaultennemy', $mysqli);
+    CreateTable('assaultmission', $mysqli);
+    CreateTable('assaultitem', $mysqli);
 
 
 
@@ -146,7 +150,8 @@ function DatabaseWrite($object, $mysqli)
                 $where = " WHERE " . ReadDocAttribute($property, "DatabaseName") . "='" . $property->getValue($object) . "'";
                 $id = $property->getValue($object);
             }
-        } else {
+        }
+        else {
             $sqlUpdate .= "`" . ReadDocAttribute($property, "DatabaseName") . "`='" . $mysqli->real_escape_string($property->getValue($object)) . "', ";
             $sqlNewLabels .= "`" . ReadDocAttribute($property, "DatabaseName") . "`, ";
             $sqlNewValues .= "'" . $mysqli->real_escape_string($property->getValue($object)) . "', ";

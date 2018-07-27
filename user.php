@@ -37,19 +37,33 @@ class User
      */
     public $Credits = 0;
 
-    
+
     /**
      * @DatabaseType text
      * @DatabaseName mail
      */
     public $Mail = "";
-    
+
     /**
      * @DatabaseType text
      * @DatabaseName connectionguid
      */
     public $ConnectionGUID = "";
 
+
+
+    /**
+     * @DatabaseType int(3)
+     * @DatabaseName influence
+     */
+    public $Influence = 0;
+
+
+    /**
+     * @DatabaseType int(4)
+     * @DatabaseName victory
+     */
+    public $VictoryPoints = 0;
 }
 
 
