@@ -1,21 +1,29 @@
+<!-- <script src="Chart.js"></script>
+<canvas id="myChart" width="400" height="400"></canvas> -->
 <?php
-require("class.php");
+require_once("commando.php");
+require_once("AssaultEnnemy.php");
+require_once("AssaultMission.php");
+require_once("AssaultItem.php");
+require_once("db.php");
+// $missions = DatabaseReadAll("assaultmission", GetMySQLConnection());
+
+// $mission = clone $missions[rand(0, count($missions) - 1)];
+// echo json_encode($mission);
 
 
-
-
-$mission = AssaultMission::GetRandomMission(1);
-
-echo json_encode($mission);
-
-
-return;
+// return;
 
 echo "Autoresolver - tests<br/>";
 
 echo "srand=1<br/>";
 srand(1);
 
+function GetAssaultCommandos() : array
+{
+    $data = file_get_contents("assault_heroes.data");
+    return unserialize($data);
+}
 
 $threatExperience = 3;
 $allCommandos = GetAssaultCommandos();
@@ -45,119 +53,96 @@ $index = rand(0, count($allCommandos) - 1);
 $players[] = $allCommandos[$index];
 echo " et " . $allCommandos[$index]->Name . ".<br/>";
 
-$missionID = rand();
-$mission = AssaultMission::GetRandomMission($missionID);
-echo "Mission n°$missionID: tour: {$mission->Turn}, objectifs à réaliser: {$mission->ObjectivePoints}, taille de la zone: {$mission->Size} unitées.<br/>Ennemis présent: ";
-foreach ($mission->Ennemies as $ennemy) {
-    if ($ennemy->TotalCount > 0)
-        echo "<ul>{$ennemy->Name} x{$ennemy->Count}</ul>";
-}
-echo "<br/>Ennemis en attente:";
-foreach ($mission->Ennemies as $ennemy) {
-    if ($ennemy->TotalCount == 0)
-        echo "<ul>{$ennemy->Name} x{$ennemy->Count}</ul>";
-}
+$missions = DatabaseReadAll("assaultmission", GetMySQLConnection());
 
-$iSuccess = 0;
+// foreach ($players as $player) {
+//     $player->Experience += rand(15, 30);
+// }
 
-$tentative = 50;
-echo "Début des $tentative tentatives:<br/>";
+// $miss = clone $missions[1];
 
-for ($i = 1; $i <= $tentative; $i++) {
+// $result = AutoResolve($players, 1, 2, $miss);
 
-     //reinit des ennemis
-    $mission = AssaultMission::GetRandomMission($missionID);
-    //reinit des joueurs
+// return   ;
+$stats = array();
+
+for ($iExperience = 2; $iExperience < 40; $iExperience *= 2) {
     foreach ($players as $player) {
-        $player->Count = 2;
-        $player->ActualHealth = $player->Health;
+        $player->Experience = $iExperience;
     }
 
-        ob_start();
-    srand($i);
-
-    $result = AutoResolve($players, 1, 2, $mission);
-
-        ob_end_clean();
-
-
-    echo "<br>";
-    echo $result->result;
-
-    echo ": " . $result->objectives . "/" . $mission->ObjectivePoints;
-
-    if ($result->result == "reussite") $iSuccess++;
-
-}
-echo "OK. Taux de réussite: " . (int)($iSuccess / $tentative * 100) . "%<br>";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-return;
-
-for ($i = 0; $i < 8; $i++) {
-
-
-
-
-
-
-
-    $threatLevel = $threatExperience / 3;
-    $startThreat = rand(1, 2) * $threatLevel;
-
-    $mission = AssaultMission::GetRandomMission($i);
-    echo "mission: niveau de menace: $threatLevel, tour: {$mission->Turn}, points d'objectifs: {$mission->ObjectivePoints}:<br>";
-
-    for ($iTry = 0; $iTry < 20; $iTry++) {
-        $ennemies = AssaultMission::GetRandomMission($mission->Size, $i)->Ennemies;
-
-        srand($iTry);
-
-  //ob_start();
-
-
-
-        $result = AutoResolve($players, $ennemies, $threatLevel, $startThreat, $mission);
-        foreach ($players as $player) {
-            $player->Count = 2;
-            $player->ActualHealth = $player->Health;
+    foreach ($missions as $mission) {
+        echo "<hr>Mission: {$mission->Name}: tour: {$mission->Turn}, objectifs à réaliser: {$mission->ObjectivePoints}, taille de la zone: {$mission->Size} unitées, experience des joueurs: $iExperience.<br/>Ennemis: ";
+        $ennemies = $mission->CreateEnnemies(GetMySQLConnection());
+        foreach ($ennemies as $ennemy) {
+            if ($ennemy->TotalCount > 0)
+                echo " {$ennemy->Name} x{$ennemy->Count}";
         }
 
-  //ob_end_clean();
-        echo "essai $iTry: " . $result->result . "<br>";
+
+        $iSuccess = 0;
+        $iFailureIfObjective = 0;
+        $iFailureIfDead = 0;
+
+        $tentative = 100;
+        echo "<br><br>Début des $tentative tentatives:<br/>";
+
+        for ($i = 1; $i <= $tentative; $i++) {
+
+
+
+
+            ob_start();
+            srand($i);
+
+
+            $result = AutoResolve($players, 1, 2, $mission);
+
+            ob_end_clean();
+
+            if ($result->result == "reussite") $iSuccess++;
+            else {
+                $failDead = true;
+                foreach ($players as $pl)
+                    if ($pl->Count > 1)
+                    $failDead = false;
+
+                if ($failDead) $iFailureIfDead++;
+                else $iFailureIfObjective++;
+            }
+
+        }
+        echo "OK. Taux de réussite: " . (int)($iSuccess / $tentative * 100) . "%<br>Détail des echecs: " .
+            (int)($iFailureIfDead / $tentative * 100) . "% wipe équipe, " .
+            (int)($iFailureIfObjective / $tentative * 100) . "% objectif non atteint.<br><hr>";
+        $stats[$mission->Name . " avec XP$iExperience"] = array((int)($iSuccess / $tentative * 100), (int)($iFailureIfDead / $tentative * 100), (int)($iFailureIfObjective / $tentative * 100));
     }
-    foreach ($players as $player) {
-        $player->Count = 2;
-        $player->ActualHealth = $player->Health;
-        $player->Experience += ($result->result == "reussite" ? 2 : 1);
-    }
-
-    $threatExperience += ($result->result != "reussite" ? 2 : 1);
-
-
-
-    var_dump($result);
-
-    echo "mission $i, resultat: {$result->result}<br>";
-
 }
-var_dump($players);
+?>
+<!-- <script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [<?php 
+                foreach ($stats as $key => $value) {
+                    echo "\"$key\", ";
+                }
+                ?>],
+        data: [<?php
+                foreach ($stats as $item) {
+                    echo "\"{$item[0]}\", ";
+                }
 
+
+                ?>]}
+};
+</script>
+
+
+ -->
+
+<?php
 
 
 
@@ -177,7 +162,7 @@ function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMi
 {
 
     echo "<br/>Autorunning {$mission->Name}";
-    $Ennemies = $mission->Ennemies;
+    $Ennemies = $mission->CreateEnnemies(GetMySQLConnection());
     $movePerObjectif = $mission->Size / $mission->ObjectivePoints;
 
 
@@ -187,6 +172,8 @@ function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMi
 
     foreach ($Players as $pl) {
         $move[$pl->Name] = 0;
+        $pl->Count = 2;
+        $pl->ActualHealth = $pl->Health;
     }
 
     for ($i = 1; $i <= $mission->Turn; $i++) {
@@ -225,11 +212,13 @@ function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMi
                     }
                     if ($objective >= $objectiveNeeded)
                         $ProbabilityMove = 6; // 6/6 poins si l'objectif est atteint.
+                    if ($move[$actor->Name] >= $mission->Size)
+                        $ProbabilityMove = 0;
 
                     //Objectifs
                     $ProbabilityObjective = 0; //Par défaut, 0/0 points.
                     if ($movePerObjectif * ($objective + 1) < $move[$actor->Name]) {
-                        $ProbabilityObjective = $PlayerAction * 6; // 0/3 points si à portée.
+                        $ProbabilityObjective = 2 + $PlayerAction * 6; // 2/8 points si à portée.
                     }
                     if ($objective >= $objectiveNeeded)
                         $ProbabilityObjective = 0; // 0/0 points si l'objectif est réussi.
@@ -240,20 +229,26 @@ function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMi
                     if ($actor->ActualHealth < 3)
                         $ProbabilityRest += 3 * (1 - $PlayerAction); //Ca va très mal, 6/0 points.
 
-                    $ProbabilityAttack = ($PlayerAction + 1) * 3; // Par défaut, 3/6. L'inverse du déplacement.
+                    $ProbabilityAttack = ($PlayerAction + 1) * 2; // Par défaut, 2/4. L'inverse du déplacement.
                     $someTarget = GetBestTarget($Ennemies, rand());
-                    if ($someTarget == null) $ProbabilityAttack = 0; //Pas d'attaque si pas de cible...
+                    if ($someTarget == null)
+                        $ProbabilityAttack = 0; //Pas d'attaque si pas de cible...
 
-                    if ($objective >= $objectiveNeeded)
+                    if ($objective >= $objectiveNeeded && $move[$actor->Name] < $mission->Size)
                         $ProbabilityAttack = 0; // 0/0 points si l'objectif est réussi.
+
+
 
 
                     $selectedAction = rand(1, $ProbabilityAttack + $ProbabilityMove + $ProbabilityObjective + $ProbabilityRest);
                     echo "<br/>Attack=$ProbabilityAttack, Move=$ProbabilityMove, Objective=$ProbabilityObjective, Rest=$ProbabilityRest. Selected=$selectedAction";
 
-                    if ($selectedAction <= $ProbabilityAttack) {
+                    if ($selectedAction == 0) {
+                        echo "<br>Passe.";
+                    } else if ($selectedAction <= $ProbabilityAttack) {
                         echo "<br>Attaque.";
                         $target = GetBestTarget($Ennemies, rand());
+
                         Resolve($actor, $target, rand(), $actor->GetLevel(), 1);
                     } else if ($selectedAction <= $ProbabilityAttack + $ProbabilityMove) {
                         echo "<br>Déplacement: ";
@@ -264,26 +259,24 @@ function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMi
                         echo "<br>Repos. Gain de $hp";
                         $actor->ActualHealth += $hp;
                     } else {
-                        echo "<br>Objectif.";
-                        $objective++;
+                        $objType = ($objective + 1) % 4;
+                        echo "<br>Objectif de type $objType: ";
+                        if ($objType == 0) {
+                            $objective++;
+                            echo "Réussi.";
+                        } else if ($objType == 1 && rand(1, 100) > $actor->Tech * 100) {
+                            $objective++;
+                            echo "Réussi.";
+                        } else if ($objType == 2 && rand(1, 100) > $actor->Insight * 100) {
+                            $objective++;
+                            echo "Réussi.";
+                        } else if ($objType == 3 && rand(1, 100) > $actor->Strength * 100) {
+                            $objective++;
+                            echo "Réussi.";
+                        } else
+                            echo "Echoué.";
                     }
-                    // $attackOrObjective = rand(1, 4 - (2 * $PlayerAction));
-                    // if ($attackOrObjective > 2) {
-                    //     echo "<br>Déplacement:";
-                    //     $move[$actor->Name] += $actor->Move;
-                    //     echo " {$move[$actor->Name]}/{$mission->Size}";
-                    // } else if ($attackOrObjective == 2) {
-                    //     echo "<br>Attaque:";
-                    //     $target = GetBestTarget($Ennemies, rand());
-                    //     if ($target == null) {
-                    //         echo "<br>Plus de cible. Objectif à la place.";
-                    //         $objective++;
-                    //     } else
-                    //         Resolve($actor, $target, rand(), $actor->GetLevel(), 1);
-                    // } else if ($attackOrObjective == 1) {
-                    //     $objective++;
-                    //     echo "<br>Objectif.";
-                    // }
+
                 }
                 $idPlayer++;
 
@@ -295,10 +288,12 @@ function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMi
                     if ($move[$pl->Name] < $mission->Size)
                         $sizeOk = false;
                 }
-                if (!$sizeOk) {
-                    echo " but player on board.";
-                } else
+                if (!$sizeOk && $mission->NeedExit == 1) {
+                    echo ", but player on board.";
+                } else {
+                    echo ", break.";
                     break;
+                }
             }
 
 
@@ -374,6 +369,19 @@ function AutoResolve(array $Players, int $ThreatPerRound, int $threat, AssaultMi
 
         }
         echo "<br>end round<br>Objectif: $objective/$objectiveNeeded<br>";
+
+        if ($objective >= $objectiveNeeded) {
+            echo "<br>Objective done";
+            $sizeOk = true;
+            foreach ($Players as $pl) {
+                if ($move[$pl->Name] < $mission->Size)
+                    $sizeOk = false;
+            }
+            if (!$sizeOk && $mission->NeedExit == 1) {
+                echo " but player on board.";
+            } else
+                break;
+        }
 
     }
 

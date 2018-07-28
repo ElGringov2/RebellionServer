@@ -121,11 +121,12 @@ function CreateAssaultCommandosFile() : array
     $data = serialize($array);
 
     file_put_contents('assault_heroes.data', $data);
-    
+
     return $array;
 }
 
-function GetAssaultCommandos() : array {
+function GetAssaultCommandos() : array
+{
     $data = file_get_contents("assault_heroes.data");
     return unserialize($data);
 }

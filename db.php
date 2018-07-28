@@ -2,7 +2,7 @@
 require_once("utils.php");
 
 
-function GetMySQLConnection()
+function GetMySQLConnection() : mysqli
 {
     $mysqli = new mysqli("localhost", "root", "", "rebellion");
     if ($mysqli->connect_errno) {
@@ -78,16 +78,27 @@ function CreateTable($object, $mysqli)
 }
 
 
-
-
-function DatabaseReadAll($className, $mysqli, $whereClause = "true", $debug = false)
+/**
+ * Retourne des objets de la base de donnée, selon la clause Where.
+ *
+ * @param string $className Le nom de la classe d'objets à récuperer.
+ * @param mysqli $mysqli Une connexion Mysqli
+ * @param string $whereClause "true" par défaut. La clause Where.
+ * @param boolean $orderArray Faux par défaut. Si vrai, l'array sera indexé par rapport au DatabaseID.
+ * @return array Une liste d'objets.
+ */
+function DatabaseReadAll(string $className, mysqli $mysqli, string $whereClause = "true", $orderArray = false) : array
 {
+    if ($whereClause == "") $whereClause = "true";
     $sql = "SELECT * FROM `rebellion_" . strtolower($className) . "` WHERE $whereClause";
-    if ($debug) echo $sql;
     $res = $mysqli->query($sql);
     $array = array();
     while ($row = $res->fetch_assoc()) {
-        $array[] = DatabaseConvert($className, $row);
+        $object = DatabaseConvert($className, $row);
+        if ($orderArray)
+            $array[$object->DatabaseID] = $object;
+        else
+            $array[] = $object;
     }
 
     return $array;
@@ -99,7 +110,7 @@ function DatabaseRead($className, $mysqli, $whereClause = "true")
 {
     $array = DatabaseReadAll($className, $mysqli, $whereClause);
     if (count($array) > 0)
-        return $array[0];
+        return reset($array);
     return null;
 }
 
