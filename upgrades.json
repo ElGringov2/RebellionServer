@@ -1,0 +1,2356 @@
+{
+  "upgrades": [
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "chopper",
+      "name": "“Chopper”",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r2d2",
+      "name": "R2-D2",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r5d8",
+      "name": "R5-D8",
+      "cost": {
+        "basecost": 7,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "zeborrelios",
+      "name": "“Zeb” Orrelios",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "chopper",
+      "name": "“Chopper”",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "bazemalbus",
+      "name": "Baze Malbus",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "c3po",
+      "name": "C-3PO",
+      "cost": {
+        "basecost": 12,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "cassianandor",
+      "name": "Cassian Andor",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "chewbacca",
+      "name": "Chewbacca",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "herasyndulla",
+      "name": "Hera Syndulla",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "jynerso",
+      "name": "Jyn Erso",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "kananjarrus",
+      "name": "Kanan Jarrus",
+      "cost": {
+        "basecost": 14,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "landocalrissian",
+      "name": "Lando Calrissian",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "leiaorgana",
+      "name": "Leia Organa",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "magvayarro",
+      "name": "Magva Yarro",
+      "cost": {
+        "basecost": 7,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "maul",
+      "name": "Maul",
+      "cost": {
+        "basecost": 13,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "niennunb",
+      "name": "Nien Nunb",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "r2d2",
+      "name": "R2-D2",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "sabinewren",
+      "name": "Sabine Wren",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "sawgerrera",
+      "name": "Saw Gerrera",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "bistan",
+      "name": "Bistan",
+      "cost": {
+        "basecost": 14,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "ezrabridger",
+      "name": "Ezra Bridger",
+      "cost": {
+        "basecost": 18,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "hansolo",
+      "name": "Han Solo",
+      "cost": {
+        "basecost": 12,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "lukeskywalker",
+      "name": "Luke Skywalker",
+      "cost": {
+        "basecost": 30,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Rebel Alliance",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "selfless",
+      "name": "Selfless",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r2astromech",
+      "name": "R2 Astromech",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r3astromech",
+      "name": "R3 Astromech",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r4astromech",
+      "name": "R4 Astromech",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r5astromech",
+      "name": "R5 Astromech",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "cannon",
+      "xws": "heavylasercannon",
+      "name": "Heavy Laser Cannon",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "cannon",
+      "xws": "ioncannon",
+      "name": "Ion Cannon",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "cannon",
+      "xws": "jammingbeam",
+      "name": "Jamming Beam",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "cannon",
+      "xws": "tractorbeam",
+      "name": "Tractor Beam",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "crew",
+      "xws": "freelanceslicer",
+      "name": "Freelance Slicer",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "crew",
+      "xws": "gnkgonkdroid",
+      "name": "GNK “Gonk” Droid",
+      "cost": {
+        "basecost": 10,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "informant",
+      "name": "Informant",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "crew",
+      "xws": "novicetechnician",
+      "name": "Novice Technician",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "crew",
+      "xws": "perceptivecopilot",
+      "name": "Perceptive Copilot",
+      "cost": {
+        "basecost": 10,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "crew",
+      "xws": "seasonednavigator",
+      "name": "Seasoned Navigator",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "crew",
+      "xws": "tacticalofficer",
+      "name": "Tactical Officer",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "device",
+      "xws": "connernets",
+      "name": "Conner Nets",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "device",
+      "xws": "protonbombs",
+      "name": "Proton Bombs",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "device",
+      "xws": "proximitymines",
+      "name": "Proximity Mines",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "device",
+      "xws": "seismiccharges",
+      "name": "Seismic Charges",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 2,
+      "type": "device",
+      "xws": "bombletgenerator",
+      "name": "Bomblet Generator",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "force",
+      "xws": "heightenedperception",
+      "name": "Heightened Perception",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "force",
+      "xws": "instinctiveaim",
+      "name": "Instinctive Aim",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "force",
+      "xws": "sense",
+      "name": "Sense",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "force",
+      "xws": "supernaturalreflexes",
+      "name": "Supernatural Reflexes",
+      "cost": {
+        "basecost": 12,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "agilegunner",
+      "name": "Agile Gunner",
+      "cost": {
+        "basecost": 10,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "hotshotgunner",
+      "name": "Hotshot Gunner",
+      "cost": {
+        "basecost": 7,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "skilledbombardier",
+      "name": "Skilled Bombardier",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "veterantailgunner",
+      "name": "Veteran Tail Gunner",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "veteranturretgunner",
+      "name": "Veteran Turret Gunner",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": true,
+      "slots": 1,
+      "type": "illicit",
+      "xws": "cloakingdevice",
+      "name": "Cloaking Device",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "illicit",
+      "xws": "contrabandcybernetics",
+      "name": "Contraband Cybernetics",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "illicit",
+      "xws": "deadmansswitch",
+      "name": "Deadman’s Switch",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "illicit",
+      "xws": "feedbackarray",
+      "name": "Feedback Array",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "illicit",
+      "xws": "inertialdampeners",
+      "name": "Inertial Dampeners",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "illicit",
+      "xws": "riggedcargochute",
+      "name": "Rigged Cargo Chute",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "missile",
+      "xws": "clustermissiles",
+      "name": "Cluster Missiles",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "missile",
+      "xws": "concussionmissiles",
+      "name": "Concussion Missiles",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "missile",
+      "xws": "homingmissiles",
+      "name": "Homing Missiles",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "missile",
+      "xws": "ionmissiles",
+      "name": "Ion Missiles",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "missile",
+      "xws": "protonrockets",
+      "name": "Proton Rockets",
+      "cost": {
+        "basecost": 7,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 2,
+      "type": "missile",
+      "xws": "barragerockets",
+      "name": "Barrage Rockets",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "ablativeplating",
+      "name": "Ablative Plating",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "advancedslam",
+      "name": "Advanced SLAM",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "afterburners",
+      "name": "Afterburners",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "electronicbaffle",
+      "name": "Electronic Baffle",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "engineupgrade",
+      "name": "Engine Upgrade",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 3,
+        "costlarge": 3
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "engineupgrade",
+      "name": "Engine Upgrade",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 3,
+        "costlarge": 3
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "engineupgrade",
+      "name": "Engine Upgrade",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 3,
+        "costlarge": 3
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "hullupgrade",
+      "name": "Hull Upgrade",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 1,
+        "costagi3": 3,
+        "costagi4": 5,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "munitionsfailsafe",
+      "name": "Munitions Failsafe",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "shieldupgrade",
+      "name": "Shield Upgrade",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 1,
+        "costagi3": 3,
+        "costagi4": 5,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "staticdischargevanes",
+      "name": "Static Discharge Vanes",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "stealthdevice",
+      "name": "Stealth Device",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 1,
+        "costagi3": 3,
+        "costagi4": 5,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "modification",
+      "xws": "tacticalscrambler",
+      "name": "Tactical Scrambler",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "sensor",
+      "xws": "advancedsensors",
+      "name": "Advanced Sensors",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "sensor",
+      "xws": "collisiondetector",
+      "name": "Collision Detector",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "sensor",
+      "xws": "firecontrolsystem",
+      "name": "Fire-Control System",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "sensor",
+      "xws": "trajectorysimulator",
+      "name": "Trajectory Simulator",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "composure",
+      "name": "Composure",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "crackshot",
+      "name": "Crack Shot",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "daredevil",
+      "name": "Daredevil",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "debrisgambit",
+      "name": "Debris Gambit",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "elusive",
+      "name": "Elusive",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "experthandling",
+      "name": "Expert Handling",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 2,
+        "costlarge": 2
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "intimidation",
+      "name": "Intimidation",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "juke",
+      "name": "Juke",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": true,
+      "slots": 1,
+      "type": "talent",
+      "xws": "lonewolf",
+      "name": "Lone Wolf",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "marksmanship",
+      "name": "Marksmanship",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "outmaneuver",
+      "name": "Outmaneuver",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "predator",
+      "name": "Predator",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "saturationsalvo",
+      "name": "Saturation Salvo",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": true,
+      "slots": 1,
+      "type": "talent",
+      "xws": "squadleader",
+      "name": "Squad Leader",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "swarmtactics",
+      "name": "Swarm Tactics",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "trickshot",
+      "name": "Trick Shot",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "torpedo",
+      "xws": "advprotontorpedoes",
+      "name": "Adv. Proton Torpedoes",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "torpedo",
+      "xws": "iontorpedoes",
+      "name": "Ion Torpedoes",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "torpedo",
+      "xws": "protontorpedoes",
+      "name": "Proton Torpedoes",
+      "cost": {
+        "basecost": 9,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "turret",
+      "xws": "dorsalturret",
+      "name": "Dorsal Turret",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "",
+      "unique": false,
+      "slots": 1,
+      "type": "turret",
+      "xws": "ioncannonturret",
+      "name": "Ion Cannon Turret",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "genius",
+      "name": "“Genius”",
+      "cost": {
+        "basecost": 0,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r5tk",
+      "name": "R5-TK",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "astromech",
+      "xws": "r5p8",
+      "name": "R5-P8",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "tobiasbeckett",
+      "name": "Tobias Beckett",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "qira",
+      "name": "Qi’ra",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "chewbacca",
+      "name": "Chewbacca",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "l337",
+      "name": "L3-37",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "landocalrissian",
+      "name": "Lando Calrissian",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "000",
+      "name": "0-0-0",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "4lom",
+      "name": "4-LOM",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "bobafett",
+      "name": "Boba Fett",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "cadbane",
+      "name": "Cad Bane",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "cikatrovizago",
+      "name": "Cikatro Vizago",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "ig88d",
+      "name": "IG-88D",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "ketsuonyo",
+      "name": "Ketsu Onyo",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "lattsrazzi",
+      "name": "Latts Razzi",
+      "cost": {
+        "basecost": 7,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "maul",
+      "name": "Maul",
+      "cost": {
+        "basecost": 13,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "unkarplutt",
+      "name": "Unkar Plutt",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "zuckuss",
+      "name": "Zuckuss",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 2,
+      "type": "crew",
+      "xws": "jabbathehutt",
+      "name": "Jabba the Hutt",
+      "cost": {
+        "basecost": 8,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "hansolo",
+      "name": "Han Solo",
+      "cost": {
+        "basecost": 4,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "bossk",
+      "name": "Bossk",
+      "cost": {
+        "basecost": 10,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "bt1",
+      "name": "BT-1",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "dengar",
+      "name": "Dengar",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "greedo",
+      "name": "Greedo",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "fearless",
+      "name": "Fearless",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "000*",
+      "name": "0-0-0*",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "admiralsloane",
+      "name": "Admiral Sloane",
+      "cost": {
+        "basecost": 10,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "agentkallus",
+      "name": "Agent Kallus",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "cienaree",
+      "name": "Ciena Ree",
+      "cost": {
+        "basecost": 10,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "darthvader",
+      "name": "Darth Vader",
+      "cost": {
+        "basecost": 14,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "directorkrennic",
+      "name": "Director Krennic",
+      "cost": {
+        "basecost": 5,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "grandinquisitor",
+      "name": "Grand Inquisitor",
+      "cost": {
+        "basecost": 16,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "grandmofftarkin",
+      "name": "Grand Moff Tarkin",
+      "cost": {
+        "basecost": 10,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "ministertua",
+      "name": "Minister Tua",
+      "cost": {
+        "basecost": 7,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "moffjerjerrod",
+      "name": "Moff Jerjerrod",
+      "cost": {
+        "basecost": 12,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "crew",
+      "xws": "seventhsister",
+      "name": "Seventh Sister",
+      "cost": {
+        "basecost": 12,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": false,
+      "slots": 1,
+      "type": "crew",
+      "xws": "isbslicer",
+      "name": "ISB Slicer",
+      "cost": {
+        "basecost": 3,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 2,
+      "type": "crew",
+      "xws": "deathtroopers",
+      "name": "Death Troopers",
+      "cost": {
+        "basecost": 6,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 2,
+      "type": "crew",
+      "xws": "emperorpalpatine",
+      "name": "Emperor Palpatine",
+      "cost": {
+        "basecost": 13,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "bt1*",
+      "name": "BT-1*",
+      "cost": {
+        "basecost": 2,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": true,
+      "slots": 1,
+      "type": "gunner",
+      "xws": "fifthbrother",
+      "name": "Fifth Brother",
+      "cost": {
+        "basecost": 12,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    },
+    {
+      "faction": "Scum and Villainy",
+      "unique": false,
+      "slots": 1,
+      "type": "talent",
+      "xws": "ruthless",
+      "name": "Ruthless",
+      "cost": {
+        "basecost": 1,
+        "costagi2": 0,
+        "costagi3": 0,
+        "costagi4": 0,
+        "costmed": 0,
+        "costlarge": 0
+      }
+    }
+  ]
+}
