@@ -1,0 +1,1027 @@
+{
+  "pilots": [
+    {
+      "name": "Braylen Stramm",
+      "ship": "A/SF-01 B-wing",
+      "cost": 50,
+      "xws": "braylenstramm",
+      "unique": true,
+      "upgrade": {
+        "cannon": 2,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Ten Numb",
+      "ship": "A/SF-01 B-wing",
+      "cost": 50,
+      "xws": "tennumb",
+      "unique": true,
+      "upgrade": {
+        "cannon": 2,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Blade Squadron Veteran",
+      "ship": "A/SF-01 B-wing",
+      "cost": 44,
+      "xws": "bladesquadronveteran",
+      "unique": false,
+      "upgrade": {
+        "cannon": 2,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Blue Squadron Pilot",
+      "ship": "A/SF-01 B-wing",
+      "cost": 42,
+      "xws": "bluesquadronpilot",
+      "unique": false,
+      "upgrade": {
+        "cannon": 2,
+        "modification": 1,
+        "sensor": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Norra Wexley",
+      "ship": "ARC-170 Starfighter",
+      "cost": 55,
+      "xws": "norrawexley",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Shara Bey",
+      "ship": "ARC-170 Starfighter",
+      "cost": 53,
+      "xws": "sharabey",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Garven Dreis",
+      "ship": "ARC-170 Starfighter",
+      "cost": 51,
+      "xws": "garvendreis",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Ibtisam",
+      "ship": "ARC-170 Starfighter",
+      "cost": 50,
+      "xws": "ibtisam",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Ezra Bridger",
+      "ship": "Attack Shuttle",
+      "cost": 41,
+      "xws": "ezrabridger",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "force": 1,
+        "modification": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Hera Syndulla",
+      "ship": "Attack Shuttle",
+      "cost": 39,
+      "xws": "herasyndulla",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Sabine Wren",
+      "ship": "Attack Shuttle",
+      "cost": 38,
+      "xws": "sabinewren",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "“Zeb” Orrelios",
+      "ship": "Attack Shuttle",
+      "cost": 34,
+      "xws": "zeborrelios",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Wullffwarro",
+      "ship": "Auzituck Gunship",
+      "cost": 56,
+      "xws": "wullffwarro",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Lowhhrick",
+      "ship": "Auzituck Gunship",
+      "cost": 52,
+      "xws": "lowhhrick",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Kashyyyk Defender",
+      "ship": "Auzituck Gunship",
+      "cost": 46,
+      "xws": "kashyyykdefender",
+      "unique": false,
+      "upgrade": {
+        "crew": 2,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Norra Wexley",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 43,
+      "xws": "norrawexley",
+      "unique": true,
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "“Dutch” Vander",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 42,
+      "xws": "dutchvander",
+      "unique": true,
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Horton Salm",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 38,
+      "xws": "hortonsalm",
+      "unique": true,
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Evaan Verlaine",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 36,
+      "xws": "evaanverlaine",
+      "unique": true,
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Gold Squadron Veteran",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 34,
+      "xws": "goldsquadronveteran",
+      "unique": false,
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Gray Squadron Bomber",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 32,
+      "xws": "graysquadronbomber",
+      "unique": false,
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Esege Tuketu",
+      "ship": "BTL-S8 K-wing",
+      "cost": 50,
+      "xws": "esegetuketu",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Miranda Doni",
+      "ship": "BTL-S8 K-wing",
+      "cost": 48,
+      "xws": "mirandadoni",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Warden Squadron Pilot",
+      "ship": "BTL-S8 K-wing",
+      "cost": 40,
+      "xws": "wardensquadronpilot",
+      "unique": false,
+      "upgrade": {
+        "crew": 1,
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Corran Horn",
+      "ship": "E-wing",
+      "cost": 74,
+      "xws": "corranhorn",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Gavin Darklighter",
+      "ship": "E-wing",
+      "cost": 68,
+      "xws": "gavindarklighter",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Rogue Squadron Escort",
+      "ship": "E-wing",
+      "cost": 63,
+      "xws": "roguesquadronescort",
+      "unique": false,
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Knave Squadron Escort",
+      "ship": "E-wing",
+      "cost": 61,
+      "xws": "knavesquadronescort",
+      "unique": false,
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Jan Ors",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 42,
+      "xws": "janors",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Kyle Katarn",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 38,
+      "xws": "kylekatarn",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Roark Garnet",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 38,
+      "xws": "roarkgarnet",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Rebel Scout",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 32,
+      "xws": "rebelscout",
+      "unique": false,
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "modification": 2
+      }
+    },
+    {
+      "name": "Jake Farrell",
+      "ship": "RZ-1 A-wing",
+      "cost": 40,
+      "xws": "jakefarrell",
+      "unique": true,
+      "upgrade": {
+        "missile": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Arvel Crynyd",
+      "ship": "RZ-1 A-wing",
+      "cost": 36,
+      "xws": "arvelcrynyd",
+      "unique": true,
+      "upgrade": {
+        "missile": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Green Squadron Pilot",
+      "ship": "RZ-1 A-wing",
+      "cost": 34,
+      "xws": "greensquadronpilot",
+      "unique": false,
+      "upgrade": {
+        "missile": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Phoenix Squadron Pilot",
+      "ship": "RZ-1 A-wing",
+      "cost": 30,
+      "xws": "phoenixsquadronpilot",
+      "unique": false,
+      "upgrade": {
+        "missile": 1
+      }
+    },
+    {
+      "name": "Fenn Rau",
+      "ship": "Sheathipede-class Shuttle",
+      "cost": 52,
+      "xws": "fennrau",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Ezra Bridger",
+      "ship": "Sheathipede-class Shuttle",
+      "cost": 42,
+      "xws": "ezrabridger",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "force": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "“Zeb” Orrelios",
+      "ship": "Sheathipede-class Shuttle",
+      "cost": 32,
+      "xws": "zeborrelios",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "AP-5",
+      "ship": "Sheathipede-class Shuttle",
+      "cost": 30,
+      "xws": "ap5",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Luke Skywalker",
+      "ship": "T-65 X-wing",
+      "cost": 62,
+      "xws": "lukeskywalker",
+      "unique": true,
+      "upgrade": {
+        "force": 1,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Wedge Antilles",
+      "ship": "T-65 X-wing",
+      "cost": 52,
+      "xws": "wedgeantilles",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Biggs Darklighter",
+      "ship": "T-65 X-wing",
+      "cost": 48,
+      "xws": "biggsdarklighter",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Kullbee Sperado",
+      "ship": "T-65 X-wing",
+      "cost": 48,
+      "xws": "kullbeesperado",
+      "unique": true,
+      "upgrade": {
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Thane Kyrell",
+      "ship": "T-65 X-wing",
+      "cost": 48,
+      "xws": "thanekyrell",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Garven Dreis",
+      "ship": "T-65 X-wing",
+      "cost": 47,
+      "xws": "garvendreis",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Jek Porkins",
+      "ship": "T-65 X-wing",
+      "cost": 46,
+      "xws": "jekporkins",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Leevan Tenza",
+      "ship": "T-65 X-wing",
+      "cost": 46,
+      "xws": "leevantenza",
+      "unique": true,
+      "upgrade": {
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Edrio Two Tubes",
+      "ship": "T-65 X-wing",
+      "cost": 45,
+      "xws": "edriotwotubes",
+      "unique": true,
+      "upgrade": {
+        "illicit": 1,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Red Squadron Veteran",
+      "ship": "T-65 X-wing",
+      "cost": 43,
+      "xws": "redsquadronveteran",
+      "unique": false,
+      "upgrade": {
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Blue Squadron Escort",
+      "ship": "T-65 X-wing",
+      "cost": 41,
+      "xws": "bluesquadronescort",
+      "unique": false,
+      "upgrade": {
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Cavern Angels Zealot",
+      "ship": "T-65 X-wing",
+      "cost": 41,
+      "xws": "cavernangelszealot",
+      "unique": false,
+      "upgrade": {
+        "illicit": 1,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Captain Rex",
+      "ship": "TIE/ln Fighter",
+      "cost": 32,
+      "xws": "captainrex",
+      "unique": true,
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Ezra Bridger",
+      "ship": "TIE/ln Fighter",
+      "cost": 32,
+      "xws": "ezrabridger",
+      "unique": true,
+      "upgrade": {
+        "force": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Sabine Wren",
+      "ship": "TIE/ln Fighter",
+      "cost": 28,
+      "xws": "sabinewren",
+      "unique": true,
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Zeb” Orrelios ",
+      "ship": "TIE/ln Fighter",
+      "cost": 26,
+      "xws": "zeborrelios",
+      "unique": true,
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Saw Gerrera",
+      "ship": "UT-60D U-wing",
+      "cost": 52,
+      "xws": "sawgerrera",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Magva Yarro",
+      "ship": "UT-60D U-wing",
+      "cost": 50,
+      "xws": "magvayarro",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Bodhi Rook",
+      "ship": "UT-60D U-wing",
+      "cost": 49,
+      "xws": "bodhirook",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Benthic Two Tubes",
+      "ship": "UT-60D U-wing",
+      "cost": 47,
+      "xws": "benthictwotubes",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Cassian Andor",
+      "ship": "UT-60D U-wing",
+      "cost": 47,
+      "xws": "cassianandor",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Heff Tobber",
+      "ship": "UT-60D U-wing",
+      "cost": 45,
+      "xws": "hefftobber",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Blue Squadron Scout",
+      "ship": "UT-60D U-wing",
+      "cost": 43,
+      "xws": "bluesquadronscout",
+      "unique": false,
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Partisan Renegade",
+      "ship": "UT-60D U-wing",
+      "cost": 43,
+      "xws": "partisanrenegade",
+      "unique": false,
+      "upgrade": {
+        "crew": 2,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Kanan Jarrus",
+      "ship": "VCX-100 Light Freighter",
+      "cost": 90,
+      "xws": "kananjarrus",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "force": 1,
+        "gunner": 1,
+        "modification": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Hera Syndulla",
+      "ship": "VCX-100 Light Freighter",
+      "cost": 76,
+      "xws": "herasyndulla",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "“Chopper”",
+      "ship": "VCX-100 Light Freighter",
+      "cost": 72,
+      "xws": "chopper",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "modification": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Lothal Rebel",
+      "ship": "VCX-100 Light Freighter",
+      "cost": 70,
+      "xws": "lothalrebel",
+      "unique": false,
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "modification": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Han Solo",
+      "ship": "Modified YT-1300 Light Freighter",
+      "cost": 92,
+      "xws": "hansolo",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Lando Calrissian",
+      "ship": "Modified YT-1300 Light Freighter",
+      "cost": 92,
+      "xws": "landocalrissian",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Chewbacca",
+      "ship": "Modified YT-1300 Light Freighter",
+      "cost": 84,
+      "xws": "chewbacca",
+      "unique": true,
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Outer Rim Smuggler",
+      "ship": "Modified YT-1300 Light Freighter",
+      "cost": 78,
+      "xws": "outerrimsmuggler",
+      "unique": false,
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Dash Rendar",
+      "ship": "YT-2400 Light Freighter",
+      "cost": 100,
+      "xws": "dashrendar",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Leebo”",
+      "ship": "YT-2400 Light Freighter",
+      "cost": 98,
+      "xws": "leebo",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Wild Space Fringer",
+      "ship": "YT-2400 Light Freighter",
+      "cost": 88,
+      "xws": "wildspacefringer",
+      "unique": true,
+      "upgrade": {
+        "crew": 1,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Airen Cracken",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 36,
+      "xws": "airencracken",
+      "unique": true,
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Lieutenant Blount",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 30,
+      "xws": "lieutenantblount",
+      "unique": true,
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Tala Squadron Pilot",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 25,
+      "xws": "talasquadronpilot",
+      "unique": false,
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Bandit Squadron Pilot",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 23,
+      "xws": "banditsquadronpilot",
+      "unique": false,
+      "upgrade": {
+        "missile": 1,
+        "modification": 1
+      }
+    }
+  ]
+}
