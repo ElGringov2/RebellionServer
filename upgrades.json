@@ -2081,12 +2081,12 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
-      "xws": "000*",
-      "name": "0-0-0*",
+      "xws": "000empire",
+      "name": "0-0-0 Empire",
       "cost": {
         "basecost": 3,
         "costagi2": 0,
@@ -2097,7 +2097,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2113,7 +2113,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2129,7 +2129,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2145,7 +2145,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2161,7 +2161,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2177,7 +2177,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2193,7 +2193,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2209,7 +2209,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2225,7 +2225,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2241,7 +2241,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "crew",
@@ -2257,7 +2257,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": false,
       "slots": 1,
       "type": "crew",
@@ -2273,7 +2273,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 2,
       "type": "crew",
@@ -2289,7 +2289,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 2,
       "type": "crew",
@@ -2305,12 +2305,12 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "gunner",
-      "xws": "bt1*",
-      "name": "BT-1*",
+      "xws": "bt1",
+      "name": "BT-1",
       "cost": {
         "basecost": 2,
         "costagi2": 0,
@@ -2321,7 +2321,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": true,
       "slots": 1,
       "type": "gunner",
@@ -2337,7 +2337,7 @@
       }
     },
     {
-      "faction": "Scum and Villainy",
+      "faction": "Galactic Empire",
       "unique": false,
       "slots": 1,
       "type": "talent",
