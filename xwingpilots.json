@@ -1,11 +1,949 @@
 {
   "pilots": [
     {
+      "name": "Major Vynder ",
+      "ship": "Alpha-class Star Wing",
+      "cost": 41,
+      "xws": "majorvynder",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Lieutenant Karsabi ",
+      "ship": "Alpha-class Star Wing",
+      "cost": 39,
+      "xws": "lieutenantkarsabi",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Rho Squadron Pilot ",
+      "ship": "Alpha-class Star Wing",
+      "cost": 37,
+      "xws": "rhosquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Nu Squadron Pilot ",
+      "ship": "Alpha-class Star Wing",
+      "cost": 35,
+      "xws": "nusquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Captain Kagi ",
+      "ship": "Lambda-class T-4a Shuttle",
+      "cost": 48,
+      "xws": "captainkagi",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Lieutenant Sai ",
+      "ship": "Lambda-class T-4a Shuttle",
+      "cost": 47,
+      "xws": "lieutenantsai",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Colonel Jendon ",
+      "ship": "Lambda-class T-4a Shuttle",
+      "cost": 46,
+      "xws": "coloneljendon",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Omicron Group Pilot ",
+      "ship": "Lambda-class T-4a Shuttle",
+      "cost": 43,
+      "xws": "omicrongrouppilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 2,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Grand Inquisitor",
+      "ship": "TIE Advanced v1",
+      "cost": 58,
+      "xws": "grandinquisitor",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "force": 1,
+        "missile": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Seventh Sister",
+      "ship": "TIE Advanced v1",
+      "cost": 48,
+      "xws": "seventhsister",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "force": 1,
+        "missile": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Inquisitor",
+      "ship": "TIE Advanced v1",
+      "cost": 40,
+      "xws": "inquisitor",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "force": 1,
+        "missile": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Baron of the Empire",
+      "ship": "TIE Advanced v1",
+      "cost": 34,
+      "xws": "baronoftheempire",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Darth Vader",
+      "ship": "TIE Advanced x1",
+      "cost": 70,
+      "xws": "darthvader",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "force": 1,
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Maarek Stele",
+      "ship": "TIE Advanced x1",
+      "cost": 50,
+      "xws": "maarekstele",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Ved Foslo",
+      "ship": "TIE Advanced x1",
+      "cost": 47,
+      "xws": "vedfoslo",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Zertik Strom",
+      "ship": "TIE Advanced x1",
+      "cost": 45,
+      "xws": "zertikstrom",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Storm Squadron Ace",
+      "ship": "TIE Advanced x1",
+      "cost": 43,
+      "xws": "stormsquadronace",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Tempest Squadron Pilot",
+      "ship": "TIE Advanced x1",
+      "cost": 41,
+      "xws": "tempestsquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "missile": 1,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Soontir Fel",
+      "ship": "TIE Interceptor",
+      "cost": 52,
+      "xws": "soontirfel",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Turr Phennir",
+      "ship": "TIE Interceptor",
+      "cost": 44,
+      "xws": "turrphennir",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Saber Squadron Ace",
+      "ship": "TIE Interceptor",
+      "cost": 40,
+      "xws": "sabersquadronace",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Alpha Squadron Pilot",
+      "ship": "TIE Interceptor",
+      "cost": 34,
+      "xws": "alphasquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 2
+      }
+    },
+    {
+      "name": "Major Vermeil",
+      "ship": "TIE Reaper",
+      "cost": 49,
+      "xws": "majorvermeil",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Captain Feroph",
+      "ship": "TIE Reaper",
+      "cost": 47,
+      "xws": "captainferoph",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 2,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Vizier”",
+      "ship": "TIE Reaper",
+      "cost": 45,
+      "xws": "vizier",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 2,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Scarif Base Pilot",
+      "ship": "TIE Reaper",
+      "cost": 41,
+      "xws": "scarifbasepilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 2,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Lieutenant Kestal",
+      "ship": "TIE/ag Aggressor",
+      "cost": 36,
+      "xws": "lieutenantkestal",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "“Double Edge”",
+      "ship": "TIE/ag Aggressor",
+      "cost": 33,
+      "xws": "doubleedge",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Onyx Squadron Scout",
+      "ship": "TIE/ag Aggressor",
+      "cost": 32,
+      "xws": "onyxsquadronscout",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Sienar Specialist ",
+      "ship": "TIE/ag Aggressor",
+      "cost": 30,
+      "xws": "sienarspecialist",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "gunner": 1,
+        "missile": 2,
+        "turret": 1
+      }
+    },
+    {
+      "name": "“Redline”",
+      "ship": "TIE/ca Punisher",
+      "cost": 44,
+      "xws": "redline",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "sensor": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "“Deathrain”",
+      "ship": "TIE/ca Punisher",
+      "cost": 42,
+      "xws": "deathrain",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "sensor": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Cutlass Squadron Pilot",
+      "ship": "TIE/ca Punisher",
+      "cost": 36,
+      "xws": "cutlasssquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "sensor": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Colonel Vessery",
+      "ship": "TIE/D Defender",
+      "cost": 88,
+      "xws": "colonelvessery",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "missile": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Countess Ryad",
+      "ship": "TIE/D Defender",
+      "cost": 86,
+      "xws": "countessryad",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "missile": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Rexler Brath",
+      "ship": "TIE/D Defender",
+      "cost": 84,
+      "xws": "rexlerbrath",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "missile": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Onyx Squadron Ace",
+      "ship": "TIE/D Defender",
+      "cost": 78,
+      "xws": "onyxsquadronace",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "missile": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Delta Squadron Pilot",
+      "ship": "TIE/D Defender",
+      "cost": 72,
+      "xws": "deltasquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "cannon": 1,
+        "missile": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "“Howlrunner”",
+      "ship": "TIE/ln Fighter",
+      "cost": 40,
+      "xws": "howlrunner",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Iden Versio",
+      "ship": "TIE/ln Fighter",
+      "cost": 40,
+      "xws": "idenversio",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Mauler” Mithel",
+      "ship": "TIE/ln Fighter",
+      "cost": 32,
+      "xws": "maulermithel",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Scourge” Skutu",
+      "ship": "TIE/ln Fighter",
+      "cost": 32,
+      "xws": "scourgeskutu",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Wampa”",
+      "ship": "TIE/ln Fighter",
+      "cost": 30,
+      "xws": "wampa",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Del Meeko",
+      "ship": "TIE/ln Fighter",
+      "cost": 30,
+      "xws": "delmeeko",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Gideon Hask",
+      "ship": "TIE/ln Fighter",
+      "cost": 30,
+      "xws": "gideonhask",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Seyn Marana",
+      "ship": "TIE/ln Fighter",
+      "cost": 30,
+      "xws": "seynmarana",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Valen Rudor",
+      "ship": "TIE/ln Fighter",
+      "cost": 28,
+      "xws": "valenrudor",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Night Beast”",
+      "ship": "TIE/ln Fighter",
+      "cost": 26,
+      "xws": "nightbeast",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Black Squadron Ace",
+      "ship": "TIE/ln Fighter",
+      "cost": 26,
+      "xws": "blacksquadronace",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Obsidian Squadron Pilot",
+      "ship": "TIE/ln Fighter",
+      "cost": 24,
+      "xws": "obsidiansquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Academy Pilot",
+      "ship": "TIE/ln Fighter",
+      "cost": 23,
+      "xws": "academypilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "“Whisper”",
+      "ship": "TIE/ph Phantom",
+      "cost": 52,
+      "xws": "whisper",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Echo”",
+      "ship": "TIE/ph Phantom",
+      "cost": 50,
+      "xws": "echo",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Sigma Squadron Ace",
+      "ship": "TIE/ph Phantom",
+      "cost": 46,
+      "xws": "sigmasquadronace",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Imdaar Test Pilot",
+      "ship": "TIE/ph Phantom",
+      "cost": 44,
+      "xws": "imdaartestpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Captain Jonus",
+      "ship": "TIE/sa Bomber",
+      "cost": 36,
+      "xws": "captainjonus",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Major Rhymer",
+      "ship": "TIE/sa Bomber",
+      "cost": 34,
+      "xws": "majorrhymer",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Tomax Bren",
+      "ship": "TIE/sa Bomber",
+      "cost": 34,
+      "xws": "tomaxbren",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "“Deathfire”",
+      "ship": "TIE/sa Bomber",
+      "cost": 32,
+      "xws": "deathfire",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Gamma Squadron Ace",
+      "ship": "TIE/sa Bomber",
+      "cost": 30,
+      "xws": "gammasquadronace",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Scimitar Squadron Pilot ",
+      "ship": "TIE/sa Bomber",
+      "cost": 28,
+      "xws": "scimitarsquadronpilot",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 2,
+        "gunner": 1,
+        "missile": 2,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "“Countdown”",
+      "ship": "TIE/sk Striker",
+      "cost": 44,
+      "xws": "countdown",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Pure Sabacc”",
+      "ship": "TIE/sk Striker",
+      "cost": 44,
+      "xws": "puresabacc",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "“Duchess”",
+      "ship": "TIE/sk Striker",
+      "cost": 42,
+      "xws": "duchess",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Black Squadron Scout",
+      "ship": "TIE/sk Striker",
+      "cost": 38,
+      "xws": "blacksquadronscout",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Planetary Sentinel",
+      "ship": "TIE/sk Striker",
+      "cost": 34,
+      "xws": "planetarysentinel",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Rear Admiral Chiraneau ",
+      "ship": "VT-49 Decimator",
+      "cost": 88,
+      "xws": "rearadmiralchiraneau",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 2,
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Captain Oicunn ",
+      "ship": "VT-49 Decimator",
+      "cost": 84,
+      "xws": "captainoicunn",
+      "unique": true,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 2,
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Patrol Leader ",
+      "ship": "VT-49 Decimator",
+      "cost": 80,
+      "xws": "patrolleader",
+      "unique": false,
+      "faction": "Galactic Empire",
+      "upgrade": {
+        "crew": 2,
+        "device": 1,
+        "gunner": 1,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
       "name": "Braylen Stramm",
       "ship": "A/SF-01 B-wing",
       "cost": 50,
       "xws": "braylenstramm",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "cannon": 2,
         "modification": 1,
@@ -20,6 +958,7 @@
       "cost": 50,
       "xws": "tennumb",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "cannon": 2,
         "modification": 1,
@@ -34,6 +973,7 @@
       "cost": 44,
       "xws": "bladesquadronveteran",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "cannon": 2,
         "modification": 1,
@@ -48,6 +988,7 @@
       "cost": 42,
       "xws": "bluesquadronpilot",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "cannon": 2,
         "modification": 1,
@@ -61,6 +1002,7 @@
       "cost": 55,
       "xws": "norrawexley",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "gunner": 1,
@@ -75,6 +1017,7 @@
       "cost": 53,
       "xws": "sharabey",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "gunner": 1,
@@ -89,6 +1032,7 @@
       "cost": 51,
       "xws": "garvendreis",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "gunner": 1,
@@ -103,6 +1047,7 @@
       "cost": 50,
       "xws": "ibtisam",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "gunner": 1,
@@ -112,11 +1057,12 @@
       }
     },
     {
-      "name": "Ezra Bridger",
+      "name": "Ezra Bridger ",
       "ship": "Attack Shuttle",
       "cost": 41,
       "xws": "ezrabridger",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "force": 1,
@@ -125,11 +1071,12 @@
       }
     },
     {
-      "name": "Hera Syndulla",
+      "name": "Hera Syndulla ",
       "ship": "Attack Shuttle",
       "cost": 39,
       "xws": "herasyndulla",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "modification": 1,
@@ -138,11 +1085,12 @@
       }
     },
     {
-      "name": "Sabine Wren",
+      "name": "Sabine Wren ",
       "ship": "Attack Shuttle",
       "cost": 38,
       "xws": "sabinewren",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "modification": 1,
@@ -151,15 +1099,15 @@
       }
     },
     {
-      "name": "“Zeb” Orrelios",
+      "name": "“Zeb” Orrelios ",
       "ship": "Attack Shuttle",
       "cost": 34,
       "xws": "zeborrelios",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "modification": 1,
-        "talent": 1,
         "turret": 1
       }
     },
@@ -169,6 +1117,7 @@
       "cost": 56,
       "xws": "wullffwarro",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "modification": 1,
@@ -181,6 +1130,7 @@
       "cost": 52,
       "xws": "lowhhrick",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "modification": 1,
@@ -193,6 +1143,7 @@
       "cost": 46,
       "xws": "kashyyykdefender",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "modification": 1
@@ -204,6 +1155,7 @@
       "cost": 43,
       "xws": "norrawexley",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "device": 1,
         "gunner": 1,
@@ -219,6 +1171,7 @@
       "cost": 42,
       "xws": "dutchvander",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "device": 1,
         "gunner": 1,
@@ -234,6 +1187,7 @@
       "cost": 38,
       "xws": "hortonsalm",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "device": 1,
         "gunner": 1,
@@ -249,6 +1203,7 @@
       "cost": 36,
       "xws": "evaanverlaine",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "device": 1,
         "gunner": 1,
@@ -264,6 +1219,7 @@
       "cost": 34,
       "xws": "goldsquadronveteran",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "device": 1,
         "gunner": 1,
@@ -279,6 +1235,7 @@
       "cost": 32,
       "xws": "graysquadronbomber",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "device": 1,
         "gunner": 1,
@@ -293,6 +1250,7 @@
       "cost": 50,
       "xws": "esegetuketu",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "device": 2,
@@ -308,6 +1266,7 @@
       "cost": 48,
       "xws": "mirandadoni",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "device": 2,
@@ -323,6 +1282,7 @@
       "cost": 40,
       "xws": "wardensquadronpilot",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "device": 2,
@@ -338,6 +1298,7 @@
       "cost": 74,
       "xws": "corranhorn",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "sensor": 1,
@@ -351,6 +1312,7 @@
       "cost": 68,
       "xws": "gavindarklighter",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "sensor": 1,
@@ -364,6 +1326,7 @@
       "cost": 63,
       "xws": "roguesquadronescort",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "sensor": 1,
@@ -372,23 +1335,24 @@
       }
     },
     {
-      "name": "Knave Squadron Escort",
+      "name": "Knave Squadron Escort ",
       "ship": "E-wing",
       "cost": 61,
       "xws": "knavesquadronescort",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
-        "modification": 1,
         "sensor": 1,
         "torpedo": 1
       }
     },
     {
-      "name": "Jan Ors",
+      "name": "Jan Ors ",
       "ship": "HWK-290 Light Freighter",
       "cost": 42,
       "xws": "janors",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "device": 1,
@@ -397,11 +1361,12 @@
       }
     },
     {
-      "name": "Kyle Katarn",
+      "name": "Kyle Katarn ",
       "ship": "HWK-290 Light Freighter",
       "cost": 38,
       "xws": "kylekatarn",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "device": 1,
@@ -410,11 +1375,12 @@
       }
     },
     {
-      "name": "Roark Garnet",
+      "name": "Roark Garnet ",
       "ship": "HWK-290 Light Freighter",
       "cost": 38,
       "xws": "roarkgarnet",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "device": 1,
@@ -423,11 +1389,12 @@
       }
     },
     {
-      "name": "Rebel Scout",
+      "name": "Rebel Scout ",
       "ship": "HWK-290 Light Freighter",
       "cost": 32,
       "xws": "rebelscout",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "device": 1,
@@ -440,6 +1407,7 @@
       "cost": 40,
       "xws": "jakefarrell",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "missile": 1,
         "talent": 1
@@ -451,6 +1419,7 @@
       "cost": 36,
       "xws": "arvelcrynyd",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "missile": 1,
         "talent": 1
@@ -462,6 +1431,7 @@
       "cost": 34,
       "xws": "greensquadronpilot",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "missile": 1,
         "talent": 1
@@ -473,16 +1443,18 @@
       "cost": 30,
       "xws": "phoenixsquadronpilot",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "missile": 1
       }
     },
     {
-      "name": "Fenn Rau",
+      "name": "Fenn Rau ",
       "ship": "Sheathipede-class Shuttle",
       "cost": 52,
       "xws": "fennrau",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "modification": 1,
@@ -490,11 +1462,12 @@
       }
     },
     {
-      "name": "Ezra Bridger",
+      "name": "Ezra Bridger ",
       "ship": "Sheathipede-class Shuttle",
       "cost": 42,
       "xws": "ezrabridger",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "force": 1,
@@ -502,11 +1475,12 @@
       }
     },
     {
-      "name": "“Zeb” Orrelios",
+      "name": "“Zeb” Orrelios ",
       "ship": "Sheathipede-class Shuttle",
       "cost": 32,
       "xws": "zeborrelios",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "modification": 1,
@@ -514,11 +1488,12 @@
       }
     },
     {
-      "name": "AP-5",
+      "name": "AP-5 ",
       "ship": "Sheathipede-class Shuttle",
       "cost": 30,
       "xws": "ap5",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "modification": 1,
@@ -526,11 +1501,12 @@
       }
     },
     {
-      "name": "Luke Skywalker",
+      "name": "Luke Skywalker ",
       "ship": "T-65 X-wing",
       "cost": 62,
       "xws": "lukeskywalker",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "force": 1,
         "modification": 1,
@@ -538,11 +1514,12 @@
       }
     },
     {
-      "name": "Wedge Antilles",
+      "name": "Wedge Antilles ",
       "ship": "T-65 X-wing",
       "cost": 52,
       "xws": "wedgeantilles",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -550,22 +1527,24 @@
       }
     },
     {
-      "name": "Biggs Darklighter",
+      "name": "Biggs Darklighter ",
       "ship": "T-65 X-wing",
       "cost": 48,
       "xws": "biggsdarklighter",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "torpedo": 1
       }
     },
     {
-      "name": "Kullbee Sperado",
+      "name": "Kullbee Sperado ",
       "ship": "T-65 X-wing",
       "cost": 48,
       "xws": "kullbeesperado",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -574,11 +1553,12 @@
       }
     },
     {
-      "name": "Thane Kyrell",
+      "name": "Thane Kyrell ",
       "ship": "T-65 X-wing",
       "cost": 48,
       "xws": "thanekyrell",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -586,11 +1566,12 @@
       }
     },
     {
-      "name": "Garven Dreis",
+      "name": "Garven Dreis ",
       "ship": "T-65 X-wing",
       "cost": 47,
       "xws": "garvendreis",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -598,11 +1579,12 @@
       }
     },
     {
-      "name": "Jek Porkins",
+      "name": "Jek Porkins ",
       "ship": "T-65 X-wing",
       "cost": 46,
       "xws": "jekporkins",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -610,11 +1592,12 @@
       }
     },
     {
-      "name": "Leevan Tenza",
+      "name": "Leevan Tenza ",
       "ship": "T-65 X-wing",
       "cost": 46,
       "xws": "leevantenza",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -623,11 +1606,12 @@
       }
     },
     {
-      "name": "Edrio Two Tubes",
+      "name": "Edrio Two Tubes ",
       "ship": "T-65 X-wing",
       "cost": 45,
       "xws": "edriotwotubes",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -635,11 +1619,12 @@
       }
     },
     {
-      "name": "Red Squadron Veteran",
+      "name": "Red Squadron Veteran ",
       "ship": "T-65 X-wing",
       "cost": 43,
       "xws": "redsquadronveteran",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -647,22 +1632,24 @@
       }
     },
     {
-      "name": "Blue Squadron Escort",
+      "name": "Blue Squadron Escort ",
       "ship": "T-65 X-wing",
       "cost": 41,
       "xws": "bluesquadronescort",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "torpedo": 1
       }
     },
     {
-      "name": "Cavern Angels Zealot",
+      "name": "Cavern Angels Zealot ",
       "ship": "T-65 X-wing",
       "cost": 41,
       "xws": "cavernangelszealot",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -675,6 +1662,7 @@
       "cost": 32,
       "xws": "captainrex",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1
       }
@@ -685,6 +1673,7 @@
       "cost": 32,
       "xws": "ezrabridger",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "force": 1,
         "modification": 1
@@ -696,27 +1685,30 @@
       "cost": 28,
       "xws": "sabinewren",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1,
         "talent": 1
       }
     },
     {
-      "name": "“Zeb” Orrelios ",
+      "name": "“Zeb” Orrelios",
       "ship": "TIE/ln Fighter",
       "cost": 26,
       "xws": "zeborrelios",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "modification": 1
       }
     },
     {
-      "name": "Saw Gerrera",
+      "name": "Saw Gerrera ",
       "ship": "UT-60D U-wing",
       "cost": 52,
       "xws": "sawgerrera",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "illicit": 1,
@@ -726,11 +1718,12 @@
       }
     },
     {
-      "name": "Magva Yarro",
+      "name": "Magva Yarro ",
       "ship": "UT-60D U-wing",
       "cost": 50,
       "xws": "magvayarro",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "illicit": 1,
@@ -740,11 +1733,12 @@
       }
     },
     {
-      "name": "Bodhi Rook",
+      "name": "Bodhi Rook ",
       "ship": "UT-60D U-wing",
       "cost": 49,
       "xws": "bodhirook",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "modification": 1,
@@ -753,11 +1747,12 @@
       }
     },
     {
-      "name": "Benthic Two Tubes",
+      "name": "Benthic Two Tubes ",
       "ship": "UT-60D U-wing",
       "cost": 47,
       "xws": "benthictwotubes",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "illicit": 1,
@@ -766,11 +1761,12 @@
       }
     },
     {
-      "name": "Cassian Andor",
+      "name": "Cassian Andor ",
       "ship": "UT-60D U-wing",
       "cost": 47,
       "xws": "cassianandor",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "modification": 1,
@@ -779,11 +1775,12 @@
       }
     },
     {
-      "name": "Heff Tobber",
+      "name": "Heff Tobber ",
       "ship": "UT-60D U-wing",
       "cost": 45,
       "xws": "hefftobber",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "modification": 1,
@@ -792,11 +1789,12 @@
       }
     },
     {
-      "name": "Blue Squadron Scout",
+      "name": "Blue Squadron Scout ",
       "ship": "UT-60D U-wing",
       "cost": 43,
       "xws": "bluesquadronscout",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "modification": 1,
@@ -804,11 +1802,12 @@
       }
     },
     {
-      "name": "Partisan Renegade",
+      "name": "Partisan Renegade ",
       "ship": "UT-60D U-wing",
       "cost": 43,
       "xws": "partisanrenegade",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "illicit": 1,
@@ -817,11 +1816,12 @@
       }
     },
     {
-      "name": "Kanan Jarrus",
+      "name": "Kanan Jarrus ",
       "ship": "VCX-100 Light Freighter",
       "cost": 90,
       "xws": "kananjarrus",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "force": 1,
@@ -832,11 +1832,12 @@
       }
     },
     {
-      "name": "Hera Syndulla",
+      "name": "Hera Syndulla ",
       "ship": "VCX-100 Light Freighter",
       "cost": 76,
       "xws": "herasyndulla",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "gunner": 1,
@@ -847,11 +1848,12 @@
       }
     },
     {
-      "name": "“Chopper”",
+      "name": "“Chopper” ",
       "ship": "VCX-100 Light Freighter",
       "cost": 72,
       "xws": "chopper",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "gunner": 1,
@@ -861,11 +1863,12 @@
       }
     },
     {
-      "name": "Lothal Rebel",
+      "name": "Lothal Rebel ",
       "ship": "VCX-100 Light Freighter",
       "cost": 70,
       "xws": "lothalrebel",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "gunner": 1,
@@ -875,11 +1878,12 @@
       }
     },
     {
-      "name": "Han Solo",
+      "name": "Han Solo ",
       "ship": "Modified YT-1300 Light Freighter",
       "cost": 92,
       "xws": "hansolo",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "gunner": 1,
@@ -890,11 +1894,12 @@
       }
     },
     {
-      "name": "Lando Calrissian",
+      "name": "Lando Calrissian ",
       "ship": "Modified YT-1300 Light Freighter",
       "cost": 92,
       "xws": "landocalrissian",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "gunner": 1,
@@ -905,11 +1910,12 @@
       }
     },
     {
-      "name": "Chewbacca",
+      "name": "Chewbacca ",
       "ship": "Modified YT-1300 Light Freighter",
       "cost": 84,
       "xws": "chewbacca",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "gunner": 1,
@@ -920,11 +1926,12 @@
       }
     },
     {
-      "name": "Outer Rim Smuggler",
+      "name": "Outer Rim Smuggler ",
       "ship": "Modified YT-1300 Light Freighter",
       "cost": 78,
       "xws": "outerrimsmuggler",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 2,
         "gunner": 1,
@@ -934,11 +1941,12 @@
       }
     },
     {
-      "name": "Dash Rendar",
+      "name": "Dash Rendar 󲁋",
       "ship": "YT-2400 Light Freighter",
       "cost": 100,
-      "xws": "dashrendar",
+      "xws": "dashrendar󲁋",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "gunner": 1,
@@ -949,11 +1957,12 @@
       }
     },
     {
-      "name": "“Leebo”",
+      "name": "“Leebo” ",
       "ship": "YT-2400 Light Freighter",
       "cost": 98,
       "xws": "leebo",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "gunner": 1,
@@ -963,11 +1972,12 @@
       }
     },
     {
-      "name": "Wild Space Fringer",
+      "name": "Wild Space Fringer ",
       "ship": "YT-2400 Light Freighter",
       "cost": 88,
       "xws": "wildspacefringer",
-      "unique": true,
+      "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "crew": 1,
         "gunner": 1,
@@ -982,6 +1992,7 @@
       "cost": 36,
       "xws": "airencracken",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "missile": 1,
         "modification": 1,
@@ -994,6 +2005,7 @@
       "cost": 30,
       "xws": "lieutenantblount",
       "unique": true,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "missile": 1,
         "modification": 1,
@@ -1006,6 +2018,7 @@
       "cost": 25,
       "xws": "talasquadronpilot",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
         "missile": 1,
         "modification": 1,
@@ -1013,14 +2026,1162 @@
       }
     },
     {
-      "name": "Bandit Squadron Pilot",
+      "name": "Bandit Squadron Pilot ",
       "ship": "Z-95-AF4 Headhunter",
       "cost": 23,
       "xws": "banditsquadronpilot",
       "unique": false,
+      "faction": "Rebel Alliance",
       "upgrade": {
+        "missile": 1
+      }
+    },
+    {
+      "name": "IG-88A ",
+      "ship": "Aggressor Assault Fighter",
+      "cost": 70,
+      "xws": "ig88a",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 2,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "IG-88B ",
+      "ship": "Aggressor Assault Fighter",
+      "cost": 70,
+      "xws": "ig88b",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 2,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "IG-88C ",
+      "ship": "Aggressor Assault Fighter",
+      "cost": 70,
+      "xws": "ig88c",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 2,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "IG-88D ",
+      "ship": "Aggressor Assault Fighter",
+      "cost": 70,
+      "xws": "ig88d",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 2,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Kavil",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 42,
+      "xws": "kavil",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Drea Renthal",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 40,
+      "xws": "drearenthal",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Hired Gun",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 34,
+      "xws": "hiredgun",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Crymorah Goon",
+      "ship": "BTL-A4 Y-wing",
+      "cost": 32,
+      "xws": "crymorahgoon",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "device": 1,
+        "gunner": 1,
+        "illicit": 1,
+        "modification": 1,
+        "torpedo": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Han Solo ",
+      "ship": "Customized YT-1300 Light Freighter",
+      "cost": 54,
+      "xws": "hansolo",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Lando Calrissian ",
+      "ship": "Customized YT-1300 Light Freighter",
+      "cost": 49,
+      "xws": "landocalrissian",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "L3-37 ",
+      "ship": "Customized YT-1300 Light Freighter",
+      "cost": 47,
+      "xws": "l337",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
         "missile": 1,
         "modification": 1
+      }
+    },
+    {
+      "name": "Freighter Captain ",
+      "ship": "Customized YT-1300 Light Freighter",
+      "cost": 46,
+      "xws": "freightercaptain",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 2,
+        "gunner": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Lando Calrissian",
+      "ship": "Escape Craft",
+      "cost": 26,
+      "xws": "landocalrissian",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Outer Rim Pioneer",
+      "ship": "Escape Craft",
+      "cost": 24,
+      "xws": "outerrimpioneer",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "L3-37",
+      "ship": "Escape Craft",
+      "cost": 22,
+      "xws": "l337",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Autopilot Drone",
+      "ship": "Escape Craft",
+      "cost": 12,
+      "xws": "autopilotdrone",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {}
+    },
+    {
+      "name": "Fenn Rau",
+      "ship": "Fang Fighter",
+      "cost": 68,
+      "xws": "fennrau",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Old Teroch",
+      "ship": "Fang Fighter",
+      "cost": 56,
+      "xws": "oldteroch",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Kad Solus",
+      "ship": "Fang Fighter",
+      "cost": 54,
+      "xws": "kadsolus",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Joy Rekkoff",
+      "ship": "Fang Fighter",
+      "cost": 52,
+      "xws": "joyrekkoff",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Skull Squadron Pilot",
+      "ship": "Fang Fighter",
+      "cost": 50,
+      "xws": "skullsquadronpilot",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Zealous Recruit",
+      "ship": "Fang Fighter",
+      "cost": 44,
+      "xws": "zealousrecruit",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Boba Fett ",
+      "ship": "Firespray-class Patrol Craft",
+      "cost": 80,
+      "xws": "bobafett",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Emon Azzameen ",
+      "ship": "Firespray-class Patrol Craft",
+      "cost": 76,
+      "xws": "emonazzameen",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Kath Scarlet ",
+      "ship": "Firespray-class Patrol Craft",
+      "cost": 74,
+      "xws": "kathscarlet",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Koshka Frost ",
+      "ship": "Firespray-class Patrol Craft",
+      "cost": 71,
+      "xws": "koshkafrost",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Krassis Trelix ",
+      "ship": "Firespray-class Patrol Craft",
+      "cost": 70,
+      "xws": "krassistrelix",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Bounty Hunter ",
+      "ship": "Firespray-class Patrol Craft",
+      "cost": 66,
+      "xws": "bountyhunter",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "4-LOM ",
+      "ship": "G-1A Starfighter",
+      "cost": 49,
+      "xws": "4lom",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Zuckuss ",
+      "ship": "G-1A Starfighter",
+      "cost": 47,
+      "xws": "zuckuss",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Gand Findsman ",
+      "ship": "G-1A Starfighter",
+      "cost": 43,
+      "xws": "gandfindsman",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 1,
+        "modification": 1,
+        "sensor": 1
+      }
+    },
+    {
+      "name": "Palob Godalhi ",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 38,
+      "xws": "palobgodalhi",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Dace Bonearm ",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 36,
+      "xws": "dacebonearm",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 2,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Torkil Mux ",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 36,
+      "xws": "torkilmux",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 2
+      }
+    },
+    {
+      "name": "Spice Runner ",
+      "ship": "HWK-290 Light Freighter",
+      "cost": 32,
+      "xws": "spicerunner",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 2
+      }
+    },
+    {
+      "name": "Dengar ",
+      "ship": "JumpMaster 5000",
+      "cost": 64,
+      "xws": "dengar",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Tel Trevura ",
+      "ship": "JumpMaster 5000",
+      "cost": 60,
+      "xws": "teltrevura",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Manaroo ",
+      "ship": "JumpMaster 5000",
+      "cost": 56,
+      "xws": "manaroo",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Contracted Scout ",
+      "ship": "JumpMaster 5000",
+      "cost": 52,
+      "xws": "contractedscout",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 1,
+        "modification": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Talonbane Cobra",
+      "ship": "Kihraxz Fighter",
+      "cost": 50,
+      "xws": "talonbanecobra",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 3,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Graz",
+      "ship": "Kihraxz Fighter",
+      "cost": 47,
+      "xws": "graz",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 3,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Viktor Hel",
+      "ship": "Kihraxz Fighter",
+      "cost": 45,
+      "xws": "viktorhel",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 3,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Captain Jostero",
+      "ship": "Kihraxz Fighter",
+      "cost": 43,
+      "xws": "captainjostero",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 3
+      }
+    },
+    {
+      "name": "Black Sun Ace",
+      "ship": "Kihraxz Fighter",
+      "cost": 42,
+      "xws": "blacksunace",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 3,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Cartel Marauder",
+      "ship": "Kihraxz Fighter",
+      "cost": 40,
+      "xws": "cartelmarauder",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 3
+      }
+    },
+    {
+      "name": "Asajj Ventress ",
+      "ship": "Lancer-class Pursuit Craft",
+      "cost": 84,
+      "xws": "asajjventress",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "force": 1,
+        "illicit": 2,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Ketsu Onyo ",
+      "ship": "Lancer-class Pursuit Craft",
+      "cost": 74,
+      "xws": "ketsuonyo",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 2,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Sabine Wren ",
+      "ship": "Lancer-class Pursuit Craft",
+      "cost": 68,
+      "xws": "sabinewren",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 2,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Shadowport Hunter ",
+      "ship": "Lancer-class Pursuit Craft",
+      "cost": 64,
+      "xws": "shadowporthunter",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "illicit": 2,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Torani Kulda",
+      "ship": "M12-L Kimogila",
+      "cost": 50,
+      "xws": "toranikulda",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Dalan Oberos",
+      "ship": "M12-L Kimogila",
+      "cost": 48,
+      "xws": "dalanoberos",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Cartel Executioner",
+      "ship": "M12-L Kimogila",
+      "cost": 44,
+      "xws": "cartelexecutioner",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Serissu",
+      "ship": "M3-A Interceptor",
+      "cost": 43,
+      "xws": "serissu",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Genesis Red",
+      "ship": "M3-A Interceptor",
+      "cost": 35,
+      "xws": "genesisred",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Laetin A’shera",
+      "ship": "M3-A Interceptor",
+      "cost": 35,
+      "xws": "laetinashera",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Quinn Jast ",
+      "ship": "M3-A Interceptor",
+      "cost": 35,
+      "xws": "quinnjast",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "talent": 1
+      }
+    },
+    {
+      "name": "Tansarii Point Veteran",
+      "ship": "M3-A Interceptor",
+      "cost": 33,
+      "xws": "tansariipointveteran",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Inaldra",
+      "ship": "M3-A Interceptor",
+      "cost": 32,
+      "xws": "inaldra",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Sunny Bounder",
+      "ship": "M3-A Interceptor",
+      "cost": 31,
+      "xws": "sunnybounder",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Cartel Spacer",
+      "ship": "M3-A Interceptor",
+      "cost": 29,
+      "xws": "cartelspacer",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1
+      }
+    },
+    {
+      "name": "Constable Zuvio ",
+      "ship": "Quadrijet Transfer Spacetug",
+      "cost": 33,
+      "xws": "constablezuvio",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Sarco Plank ",
+      "ship": "Quadrijet Transfer Spacetug",
+      "cost": 31,
+      "xws": "sarcoplank",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Unkar Plutt ",
+      "ship": "Quadrijet Transfer Spacetug",
+      "cost": 30,
+      "xws": "unkarplutt",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Jakku Gunrunner ",
+      "ship": "Quadrijet Transfer Spacetug",
+      "cost": 28,
+      "xws": "jakkugunrunner",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 1,
+        "illicit": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Captain Nym ",
+      "ship": "Scurrg H-6 bomber",
+      "cost": 52,
+      "xws": "captainnym",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 2,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Sol Sixxa ",
+      "ship": "Scurrg H-6 bomber",
+      "cost": 49,
+      "xws": "solsixxa",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 2,
+        "modification": 1,
+        "talent": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Lok Revenant ",
+      "ship": "Scurrg H-6 bomber",
+      "cost": 46,
+      "xws": "lokrevenant",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "crew": 1,
+        "device": 2,
+        "modification": 1,
+        "turret": 1
+      }
+    },
+    {
+      "name": "Guri ",
+      "ship": "StarViper-class Attack Platform",
+      "cost": 62,
+      "xws": "guri",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Prince Xizor ",
+      "ship": "StarViper-class Attack Platform",
+      "cost": 54,
+      "xws": "princexizor",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Dalan Oberos ",
+      "ship": "StarViper-class Attack Platform",
+      "cost": 54,
+      "xws": "dalanoberos",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Black Sun Assassin ",
+      "ship": "StarViper-class Attack Platform",
+      "cost": 48,
+      "xws": "blacksunassassin",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "talent": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Black Sun Enforcer ",
+      "ship": "StarViper-class Attack Platform",
+      "cost": 46,
+      "xws": "blacksunenforcer",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "modification": 1,
+        "sensor": 1,
+        "torpedo": 1
+      }
+    },
+    {
+      "name": "Moralo Eval ",
+      "ship": "YV-666 Light Freighter",
+      "cost": 72,
+      "xws": "moraloeval",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 3,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Bossk ",
+      "ship": "YV-666 Light Freighter",
+      "cost": 70,
+      "xws": "bossk",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 3,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Latts Razzi ",
+      "ship": "YV-666 Light Freighter",
+      "cost": 66,
+      "xws": "lattsrazzi",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 3,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Trandoshan Slaver ",
+      "ship": "YV-666 Light Freighter",
+      "cost": 58,
+      "xws": "trandoshanslaver",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "cannon": 1,
+        "crew": 3,
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "N’dru Suhlak",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 31,
+      "xws": "ndrusuhlak",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Kaa’to Leeachos",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 29,
+      "xws": "kaatoleeachos",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Black Sun Soldier",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 27,
+      "xws": "blacksunsoldier",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1,
+        "talent": 1
+      }
+    },
+    {
+      "name": "Binayre Pirate",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 24,
+      "xws": "binayrepirate",
+      "unique": false,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1,
+        "modification": 1
+      }
+    },
+    {
+      "name": "Nashtah Pup",
+      "ship": "Z-95-AF4 Headhunter",
+      "cost": 6,
+      "xws": "nashtahpup",
+      "unique": true,
+      "faction": "Scum and Villainy",
+      "upgrade": {
+        "illicit": 1,
+        "missile": 1
       }
     }
   ]
