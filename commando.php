@@ -77,7 +77,7 @@ class Commando
    * @DatabaseName tech
    */
   public $Tech = 0;
-  
+
   /**
    * @DatabaseType float(1, 19)
    * @DatabaseName insight
@@ -90,13 +90,26 @@ class Commando
    */
   public $Strength = 0;
 
+  /**
+   * @DatabaseType int(10)
+   * @DatabaseName onmission
+   */
+  public $OnMission = 0;
+
+
+  /**
+   * Pour les simulation de combat uniquement.
+   * @DatabaseIgnore
+   * @var integer
+   */
   public $Count = 2;
 
 
 
-  public function GetFullHealth() {
+  public function GetFullHealth()
+  {
     if ($this->MainArmor == null)
-    return $this->Health;
+      return $this->Health;
     return $this->Health + $this->MainArmor->Health;
   }
 

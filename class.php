@@ -3,12 +3,13 @@
 //generique
 require_once("db.php");
 require_once("utils.php");
-require_once("mission.php");
 
 //Core
 require_once("user.php");
 require_once("planet.php");
 require_once("OperationBase.php");
+require_once("mission.php");
+require_once("planning.php");
 
 //XWing
 require_once("pilot.php");

@@ -13,6 +13,13 @@ function GetMySQLConnection() : mysqli
 }
 
 
+function TableExists($table)
+{
+    $table = strtolower($table);
+    $res = GetMySQLConnection()->Query("SHOW TABLES LIKE `rebellion_$table`");
+    return mysql_num_rows($res) > 0;
+}
+
 function CreateDatabases()
 {
     $mysqli = GetMySQLConnection();
@@ -30,6 +37,7 @@ function CreateDatabases()
     CreateTable('assaultennemy', $mysqli);
     CreateTable('assaultmission', $mysqli);
     CreateTable('assaultitem', $mysqli);
+    CreateTable('planning', $mysqli);
 
 
 
@@ -129,8 +137,12 @@ function DatabaseConvert($className, $row)
         if (array_key_exists($dbName, $row)) {
             if (ReadDocAttribute($property, "DatabaseSerialize"))
                 $property->setValue($instance, unserialize($row[$dbName]));
-            else
-                $property->setValue($instance, $row[$dbName]);
+            else {
+                if (ReadDocAttribute($property, "DatabaseType") == "date")
+                    $property->setValue($instance, date_create($row[$dbName]));
+                else
+                    $property->setValue($instance, $row[$dbName]);
+            }
         }
     }
 
@@ -171,7 +183,10 @@ function DatabaseWrite($object, $mysqli)
             $sqlUpdate .= "`" . ReadDocAttribute($property, "DatabaseName") . "`='" . $mysqli->real_escape_string($text) . "', ";
             $sqlNewValues .= "'" . $mysqli->real_escape_string($text) . "', ";
             $sqlNewLabels .= "`" . ReadDocAttribute($property, "DatabaseName") . "`, ";
-
+        } else if (ReadDocAttribute($property, "DatabaseType") == "date") {
+            $sqlUpdate .= "`" . ReadDocAttribute($property, "DatabaseName") . "`='" . $property->getValue($object)->format("Y-m-d H:i:s") . "', ";
+            $sqlNewValues .= "'" . $property->getValue($object)->format("Y-m-d H:i:s") . "', ";
+            $sqlNewLabels .= "`" . ReadDocAttribute($property, "DatabaseName") . "`, ";
         } else {
             $sqlUpdate .= "`" . ReadDocAttribute($property, "DatabaseName") . "`='" . $mysqli->real_escape_string($property->getValue($object)) . "', ";
             $sqlNewLabels .= "`" . ReadDocAttribute($property, "DatabaseName") . "`, ";

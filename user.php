@@ -61,7 +61,7 @@ class User
 
     /**
      * @DatabaseType int(4)
-     * @DatabaseName victory
+     * @DatabaseName vp
      */
     public $VictoryPoints = 0;
 }
