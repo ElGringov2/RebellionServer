@@ -54,7 +54,7 @@ class Commando
    * @DatabaseType int(3)
    * @DatabaseName move
    */
-  public $Move;
+  public $Move = 4;
 
   /**
    * @DatabaseType int(3)
@@ -67,25 +67,36 @@ class Commando
    */
   public $Endurance = 10;
 
+  /**
+   * @DatabaseIgnore
+   */
   public $ActualHealth;
+
+  /**
+   * @DatabaseIgnore
+   */
   public $MainWeapon;
+
+  /**
+   * @DatabaseIgnore
+   */
   public $MainArmor;
 
 
   /**
-   * @DatabaseType float(1, 19)
+   * @DatabaseType float
    * @DatabaseName tech
    */
   public $Tech = 0;
 
   /**
-   * @DatabaseType float(1, 19)
+   * @DatabaseType float
    * @DatabaseName insight
    */
   public $Insight = 0;
 
   /**
-   * @DatabaseType float(1, 19)
+   * @DatabaseType float
    * @DatabaseName strength
    */
   public $Strength = 0;
@@ -148,73 +159,17 @@ class Commando
     return $this->Experience / 4;
   }
 
-
-  static function GetAllCommandos()
+  function ToXML(mysqli $mysqli) : string
   {
+    $gearsString = "";
+    if ($this->MainArmor != null)
+      $gearsString .= $this->MainArmor->Name." ";
+    if ($this->MainWeapon != null)
+      $gearsString .= $this->MainWeapon->Name;
 
-    $array = array();
-
-    $c = new Commando();
-    $c->Name = "Diala Passil";
-    $c->DefenseWhite = 1;
-    $c->ActualHealth = 12;
-    $c->Health = 12;
-    $c->Move = 4;
-    $weapon = new AssaultItem();
-    $weapon->Name = "Baton en Plastacier";
-    $weapon->AttackGreen = 1;
-    $weapon->AttackYellow = 1;
-    $weapon->SurgeToDamage = 1;
-    $c->MainWeapon = $weapon;
-    $array[] = $c;
-
-
-    $c = new Commando();
-    $c->Name = "Fenn Signis";
-    $c->DefenseBlack = 1;
-    $c->ActualHealth = 12;
-    $c->Health = 12;
-    $c->Move = 4;
-    $weapon = new AssaultItem();
-    $weapon->Name = "Blaster d'infanterie";
-    $weapon->AttackGreen = 1;
-    $weapon->AttackBlue = 1;
-    $weapon->SurgeToDamage = 1;
-    $c->MainWeapon = $weapon;
-    $array[] = $c;
-
-
-    $c = new Commando();
-    $c->Name = "Gaarkhan";
-    $c->DefenseBlack = 1;
-    $c->ActualHealth = 14;
-    $c->Health = 14;
-    $c->Move = 3;
-    $weapon = new AssaultItem();
-    $weapon->Name = "Vibro-hache";
-    $weapon->AttackRed = 1;
-    $weapon->AttackYellow = 1;
-    $weapon->SurgeToDamage = 1;
-    $c->MainWeapon = $weapon;
-    $array[] = $c;
-
-    $c = new Commando();
-    $c->Name = "Gideon Argus";
-    $c->DefenseBlack = 1;
-    $c->ActualHealth = 10;
-    $c->Health = 10;
-    $c->Move = 4;
-    $weapon = new AssaultItem();
-    $weapon->Name = "Blaster de poche";
-    $weapon->AttackBlue = 1;
-    $weapon->AttackYellow = 1;
-    $weapon->SurgeToPierce = 2;
-    $c->MainWeapon = $weapon;
-    $array[] = $c;
-
-    return $array;
+    
+    return sprintf("<commando name='%s' move='%s' health='%s' endurance='%s' experience='%s' gears='%s' />", $this->Name, $this->Move, $this->Health, $this->Endurance, $this->Experience, $gearsString);
   }
-
 
 }
 

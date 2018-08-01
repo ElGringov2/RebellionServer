@@ -24,12 +24,10 @@ function CreateDatabases()
 {
     $mysqli = GetMySQLConnection();
     CreateTable('Pilot', $mysqli);
-    CreateTable('Upgrade', $mysqli);
     CreateTable('user', $mysqli);
     CreateTable('planet', $mysqli);
     CreateTable('building', $mysqli);
     CreateTable('xwsship', $mysqli);
-    CreateTable('upgrade', $mysqli);
     CreateTable('operationbase', $mysqli);
     CreateTable('mission', $mysqli);
     CreateTable('commando', $mysqli);

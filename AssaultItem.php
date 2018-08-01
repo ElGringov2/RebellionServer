@@ -126,5 +126,3 @@ class AssaultItem
 
 }
 ?>
-
-

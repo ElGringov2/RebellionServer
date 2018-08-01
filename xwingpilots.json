@@ -7,6 +7,11 @@
       "xws": "majorvynder",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 1,
+      "attack": 1,
+      "shields": 1,
+      "hull": 1,
       "upgrade": {
         "missile": 1,
         "modification": 1,
@@ -22,6 +27,11 @@
       "xws": "lieutenantkarsabi",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 1,
+      "attack": 1,
+      "shields": 1,
+      "hull": 1,
       "upgrade": {
         "missile": 1,
         "modification": 1,
@@ -528,6 +538,11 @@
       "xws": "howlrunner",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -540,6 +555,11 @@
       "xws": "idenversio",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -552,6 +572,11 @@
       "xws": "maulermithel",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -564,6 +589,11 @@
       "xws": "scourgeskutu",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -576,6 +606,11 @@
       "xws": "wampa",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1
       }
@@ -587,6 +622,11 @@
       "xws": "delmeeko",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -599,6 +639,11 @@
       "xws": "gideonhask",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -611,6 +656,11 @@
       "xws": "seynmarana",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -623,6 +673,11 @@
       "xws": "valenrudor",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -635,6 +690,11 @@
       "xws": "nightbeast",
       "unique": true,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1
       }
@@ -646,6 +706,11 @@
       "xws": "blacksquadronace",
       "unique": false,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -658,6 +723,11 @@
       "xws": "obsidiansquadronpilot",
       "unique": false,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1
       }
@@ -669,6 +739,11 @@
       "xws": "academypilot",
       "unique": false,
       "faction": "Galactic Empire",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1
       }
@@ -1507,6 +1582,11 @@
       "xws": "lukeskywalker",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "force": 1,
         "modification": 1,
@@ -1520,6 +1600,11 @@
       "xws": "wedgeantilles",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "Lorsque vous attaquez, votre cible lance un dé de dédense en moins.",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -1533,6 +1618,11 @@
       "xws": "biggsdarklighter",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "modification": 1,
         "torpedo": 1
@@ -1545,6 +1635,11 @@
       "xws": "kullbeesperado",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -1559,6 +1654,11 @@
       "xws": "thanekyrell",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -1572,6 +1672,11 @@
       "xws": "garvendreis",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -1585,6 +1690,11 @@
       "xws": "jekporkins",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -1598,6 +1708,11 @@
       "xws": "leevantenza",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -1612,6 +1727,11 @@
       "xws": "edriotwotubes",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -1625,6 +1745,11 @@
       "xws": "redsquadronveteran",
       "unique": false,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "modification": 1,
         "talent": 1,
@@ -1638,6 +1763,11 @@
       "xws": "bluesquadronescort",
       "unique": false,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "modification": 1,
         "torpedo": 1
@@ -1650,6 +1780,11 @@
       "xws": "cavernangelszealot",
       "unique": false,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 2,
+      "attack": 3,
+      "shields": 2,
+      "hull": 4,
       "upgrade": {
         "illicit": 1,
         "modification": 1,
@@ -1663,6 +1798,11 @@
       "xws": "captainrex",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1
       }
@@ -1674,6 +1814,11 @@
       "xws": "ezrabridger",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "force": 1,
         "modification": 1
@@ -1686,6 +1831,11 @@
       "xws": "sabinewren",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1,
         "talent": 1
@@ -1698,6 +1848,11 @@
       "xws": "zeborrelios",
       "unique": true,
       "faction": "Rebel Alliance",
+      "ability": "",
+      "agility": 3,
+      "attack": 2,
+      "shields": 0,
+      "hull": 3,
       "upgrade": {
         "modification": 1
       }

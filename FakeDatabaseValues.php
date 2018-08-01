@@ -90,7 +90,12 @@ function FillDB()
     $squadronNames = ["Blue", "Brown", "Green", "Purple", "Red", "Turquoise", "Yellow"];
     $ownerCount = 0;
     $flights = ["Au sol", "Vol 1", "Vol 2"];
-    $ships = DatabaseReadAll("xwsship", $mysqli);
+    // $ships = DatabaseReadAll("xwsship", $mysqli);
+    $allships = Pilot::GetAllShips();
+    $ships = array();
+    foreach ($allships as $ship)
+        if ($ship["faction"] == "Rebel Alliance")
+        $ships[] = $ship;
     $users = DatabaseReadAll("user", $mysqli);
     foreach ($squadronNames as $squadronName) {
         $ownerCount++;
@@ -100,13 +105,16 @@ function FillDB()
         foreach ($flights as $flight) {
             $location = $planets[rand(0, count($planets) - 1)]->DatabaseID;
             for ($i = 0; $i <= 3; $i++) {
-                $pilot = new Pilot();
-                $pilot->Name = GenerateName(rand());
+                $pilotid = rand(0, count($ships) - 1);
+                $pilot = Pilot::FromJSON($ships[$pilotid]);
+                if ($pilot->Unique == 1)
+                    array_slice($ships, $pilotid, 1);
+                //$pilot->Name = GenerateName(rand());
                 $pilot->Squadron = $squadronName;
                 $pilot->Flight = $flight;
-                $shipxws = $ships[rand(0, count($ships) - 1)];
-                $pilot->ActualShip = $shipxws->XWS;
-                $pilot->Experience = rand(4, 50);
+                // $shipxws = $ships[rand(0, count($ships) - 1)];
+                // $pilot->ActualShip = $shipxws->XWS;
+                //$pilot->Experience = rand(4, 50);
                 if ($flight == "Au sol")
                     $pilot->Location = -1;
                 else

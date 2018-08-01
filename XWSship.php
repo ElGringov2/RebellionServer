@@ -72,8 +72,9 @@ class XWSShip
 
 
 
-    static function GetShipLetter($shipXWS)
+    static function GetShipLetter(string $ShipName)
     {
+        $shipXWS = preg_replace('/[^a-z0-9]/i', '_', $ShipName);
         $letters = array(
             "aggressor" => "i",
             "alphaclassstarwing" => "&",
