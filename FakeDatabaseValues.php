@@ -107,8 +107,9 @@ function FillDB()
             for ($i = 0; $i <= 3; $i++) {
                 $pilotid = rand(0, count($ships) - 1);
                 $pilot = Pilot::FromJSON($ships[$pilotid]);
-                if ($pilot->Unique == 1)
-                    array_slice($ships, $pilotid, 1);
+                if ($pilot->Unique == 1) {
+                    array_splice($ships, $pilotid, 1);
+                }
                 //$pilot->Name = GenerateName(rand());
                 $pilot->Squadron = $squadronName;
                 $pilot->Flight = $flight;

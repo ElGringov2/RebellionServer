@@ -27,7 +27,6 @@ function CreateDatabases()
     CreateTable('user', $mysqli);
     CreateTable('planet', $mysqli);
     CreateTable('building', $mysqli);
-    CreateTable('xwsship', $mysqli);
     CreateTable('operationbase', $mysqli);
     CreateTable('mission', $mysqli);
     CreateTable('commando', $mysqli);

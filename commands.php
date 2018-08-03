@@ -9,7 +9,6 @@ require_once("FakeDatabaseValues.php");
 
 if (isset($_GET["fakedb"])) {
     CreateDatabases();
-    UpdateShips();
     UpdateCommandos();
     FillDB();
     echo "FakeDB filled.<br/><br/>";
@@ -18,10 +17,7 @@ if (isset($_GET["galaxy"])) {
     Planet . CreateGalaxy();
 
 }
-if (isset($_GET["ship"])) {
-    UpdateShips();
 
-}
 if (isset($_GET["database"])) {
     CreateDatabases();
 
@@ -47,7 +43,6 @@ if (isset($_GET["campaign"])) {
 <a href='commands.php?fakedb=1'>FakeDB</a>
 <a href='commands.php?galaxy=1'>Reset Galaxy</a>
 <a href='commands.php?database=1'>Reset database</a>
-<a href='commands.php?ship=1'>Update Ships</a>
 <a href='commands.php?campaign=1'>Create Campaign</a>
 
 

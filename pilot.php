@@ -114,6 +114,13 @@ class Pilot
 
 
     /**
+     * @DatabaseType int(2)
+     * @DatabaseName force
+     */
+    public $Force = 0;
+
+
+    /**
      * La liste des upgrades
      *
      * @var array
@@ -129,6 +136,11 @@ class Pilot
      */
     public $Unique = 0;
 
+    /**
+     * @DatabaseType int(2)
+     * @DatabaseName size
+     */
+    public $Size = 1;
 
     function ToXML()
     {
@@ -188,13 +200,19 @@ class Pilot
             $pilot->Agility = $JSONData["agility"];
         if (isset($JSONData["attack"]))
             $pilot->Attack = $JSONData["attack"];
+        if (isset($JSONData["initiative"]))
+            $pilot->Initiative = $JSONData["initiative"];
         if (isset($JSONData["shields"]))
             $pilot->Shields = $JSONData["shields"];
+        if (isset($JSONData["force"]))
+            $pilot->Force = $JSONData["force"];
         if (isset($JSONData["hull"]))
             $pilot->Hull = $JSONData["hull"];
+        if (isset($JSONData["size"]))
+            $pilot->Size = intval($JSONData["size"]);
         $pilot->Cost = $JSONData["cost"];
         $pilot->Name = $JSONData["name"];
-        $pilot->Unique = $JSONData["unique"] == "false" ? 0 : 1;
+        $pilot->Unique = ($JSONData["unique"] ? 1 : 0);
         $pilot->Upgrades = array();
         foreach ($JSONData["upgrade"] as $key => $value) {
 
