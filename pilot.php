@@ -219,6 +219,7 @@ class Pilot
             for ($i = 0; $i < $value; $i++) {
                 $upgrade = new Upgrade();
                 $upgrade->Type = $key;
+                $upgrade->Name = "Vide";
                 $pilot->Upgrades[] = $upgrade;
             }
         }
@@ -316,15 +317,60 @@ class Upgrade
 
     /**
      * Le cout
-     * @var integer
+     * @var array
      */
-    public $Cost = 0;
+    public $Cost = array(
+        "basecost" => 0,
+        "costagi2" => 0,
+        "costagi3" => 0,
+        "costagi4" => 0,
+        "costmed" => 0,
+        "costlarge" => 0
+    );
 
+    function GetCost(Pilot $pilot)
+    {
+        $cost = $this->Cost["basecost"];
+        $cost += $pilot->Size == 2 ? $this->Cost["costmed"] : 0;
+        $cost += $pilot->Size == 3 ? $this->Cost["costlarge"] : 0;
+        $cost += $pilot->Agility == 2 ? $this->Cost["costagi2"] : 0;
+        $cost += $pilot->Agility == 3 ? $this->Cost["costagi3"] : 0;
+        $cost += $pilot->Agility == 4 ? $this->Cost["costagi4"] : 0;
+        return $cost;
+    }
     /**
-     * Le cout
+     * Le type
      * @var string
      */
     public $Type = "";
+
+
+
+    static function GetAllUpgrades()
+    {
+        $data = json_decode(file_get_contents("xwingupgrades.json"), true);
+
+        return $data["upgrades"];
+    }
+
+
+    static function FromJSONArray($data) : Upgrade {
+        $upgrade = new Upgrade();
+        $upgrade->Name = $data["name"];
+        $upgrade->Type = $data["type"];
+        $upgrade->XWS = $data["xws"];
+        $upgrade->Cost = array(
+            "basecost" => $data["cost"]["basecost"],
+            "costagi2" => $data["cost"]["costagi2"],
+            "costagi3" => $data["cost"]["costagi3"],
+            "costagi4" => $data["cost"]["costagi4"],
+            "costmed" => $data["cost"]["costmed"],
+            "costlarge" => $data["cost"]["costlarge"]
+        );
+        return $upgrade;
+    } 
+
+
 
 }
 

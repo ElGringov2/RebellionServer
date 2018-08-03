@@ -14,7 +14,6 @@ require_once("planning.php");
 //XWing
 require_once("pilot.php");
 require_once("building.php");
-require_once("XWSship.php");
 require_once("DBPilot.php");
 
 //Legion
