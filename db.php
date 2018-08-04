@@ -24,7 +24,9 @@ function CreateDatabases()
 {
     $mysqli = GetMySQLConnection();
     CreateTable('Pilot', $mysqli);
+    CreateTable('unique', $mysqli);
     CreateTable('user', $mysqli);
+    CreateTable('commander', $mysqli);
     CreateTable('planet', $mysqli);
     CreateTable('building', $mysqli);
     CreateTable('operationbase', $mysqli);
@@ -74,7 +76,7 @@ function CreateTable($object, $mysqli)
 
     }
     $sql .= "PRIMARY KEY(`" . $primary . "`)";
-    $sql .= ") ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;";
+    $sql .= ") ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
 
 
 
@@ -162,6 +164,8 @@ function DatabaseWrite($object, $mysqli)
     $where = "";
     $id = -1;
 
+    $idProperty = null;
+
     $sqlNewLabels = "INSERT INTO `rebellion_" . strtolower(get_class($object)) . "` (";
     $sqlNewValues = "";
     $sqlUpdate = "UPDATE `rebellion_" . strtolower(get_class($object)) . "` SET ";
@@ -171,6 +175,7 @@ function DatabaseWrite($object, $mysqli)
         if (ReadDocAttribute($property, "DatabasePrimary")) {
             if ($property->getValue($object) == -1) {
                 $new = true;
+                $idProperty = $property;
             } else {
                 $where = " WHERE " . ReadDocAttribute($property, "DatabaseName") . "='" . $property->getValue($object) . "'";
                 $id = $property->getValue($object);
@@ -202,8 +207,10 @@ function DatabaseWrite($object, $mysqli)
     if (!$mysqli->query($sql))
         echo "Erreur: " . $sql . "<br/>" . $mysqli->error;
 
-    if ($id == -1)
+    if ($id == -1) {
         $id = $mysqli->insert_id;
+        $idProperty->setValue($object, $id);
+    }
     return $id;
 }
 

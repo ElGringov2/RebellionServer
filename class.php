@@ -5,11 +5,14 @@ require_once("db.php");
 require_once("utils.php");
 
 //Core
+require_once("config.php");
 require_once("user.php");
+require_once("unique.php");
 require_once("planet.php");
 require_once("OperationBase.php");
 require_once("mission.php");
 require_once("planning.php");
+require_once("commander.php");
 
 //XWing
 require_once("pilot.php");

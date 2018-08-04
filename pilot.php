@@ -74,10 +74,10 @@ class Pilot
     function GetTotalCost()
     {
 
-        $upgradeCost = 0;
+        $upgradeCost = $this->Cost;
         foreach ($this->Upgrades as $upgrade)
-            $upgradeCost += $upgrade->Cost;
-        return $this->Cost;
+            $upgradeCost += $upgrade->GetCost($this);
+        return $upgradeCost;
     }
 
 
@@ -124,6 +124,7 @@ class Pilot
      * La liste des upgrades
      *
      * @var array
+     * @XmlIgnore
      * @DatabaseName upgrades
      * @DatabaseSerialize
      */
@@ -147,7 +148,7 @@ class Pilot
 
         $upgradeStr = "<upgrades>";
         foreach ($this->Upgrades as $upgrade) {
-            $upgradeStr .= ToXML($upgrade);
+            $upgradeStr .= $upgrade->ToXML($this);
         }
         $upgradeStr .= "</upgrades>";
 
@@ -190,7 +191,7 @@ class Pilot
      * @param array $JSONData
      * @return Pilot
      */
-    static function FromJSON(array $JSONData) : Pilot
+    static function FromJSON(array $JSONData, int $id = -1) : Pilot
     {
         $pilot = new Pilot();
         if (isset($JSONData["ability"]))
@@ -214,6 +215,7 @@ class Pilot
         $pilot->Name = $JSONData["name"];
         $pilot->Unique = ($JSONData["unique"] ? 1 : 0);
         $pilot->Upgrades = array();
+        $pilot->DatabaseID = $id;
         foreach ($JSONData["upgrade"] as $key => $value) {
 
             for ($i = 0; $i < $value; $i++) {
@@ -298,6 +300,50 @@ class Pilot
         );
         return $letters[$ShipName];
     }
+
+
+
+
+    /**
+     * Retourne la liste des pilotes à choisir pour le draft, uniquement si c'est le tour du joueur de choisir.
+     *
+     * @param User $user l'utilisateur
+     * @param mysqli $mysqli une connection mysqli
+     * @return string Le xml.
+     */
+    static function GetDraft(User $user, mysqli $mysqli) : string
+    {
+        $userCheck = DatabaseReadAll('user', $mysqli);
+        $dict = array();
+        foreach ($userCheck as $dbuser) {
+            $dict[$dbuser->DatabaseID] = count(DatabaseReadAll("pilot", $mysqli, "owner='{$dbuser->DatabaseID}'"));
+        }
+
+        $dbuser = DatabaseRead('user', $mysqli, "id=" . array_keys($dict, min($dict))[0]);
+
+        //echo "dbuser=".$user->DatabaseID.", min=".array_keys($dict, min($dict))[0];
+
+        if ($dbuser->DatabaseID == $user->DatabaseID) {
+            $uniques = DatabaseReadAll('unique', $mysqli);
+            $pilots = Pilot::GetAllShips();
+            usort($pilots, function ($a, $b) {
+                if ($a["ship"] == $b["ship"])
+                    return strcmp($a["name"], $b["name"]);
+                return strcmp($a["ship"], $b["ship"]);
+            });
+            $str = "<draft>";
+            foreach ($pilots as $key => $p) {
+                if ($p["unique"] && $p["faction"] == "Rebel Alliance" && array_search($p["name"], $uniques) === false)
+                    $str .= Pilot::FromJSON($p, $key)->ToXML();
+            }
+            return $str . "</draft>";
+        } else
+            return "<draft />";
+
+
+
+
+    }
 }
 
 
@@ -344,7 +390,22 @@ class Upgrade
      */
     public $Type = "";
 
+    /**
+     * La capacitée
+     * @var string
+     */
+    public $Desc = "";
 
+    function ToXML(Pilot $parent)
+    {
+        return sprintf(
+            "<upgrade name='%s' cost='%i' type='%s' desc='%s' />",
+            $this->Name,
+            $this->GetCost($parent),
+            $this->Type,
+            $this->Desc
+        );
+    }
 
     static function GetAllUpgrades()
     {
@@ -354,7 +415,8 @@ class Upgrade
     }
 
 
-    static function FromJSONArray($data) : Upgrade {
+    static function FromJSONArray($data) : Upgrade
+    {
         $upgrade = new Upgrade();
         $upgrade->Name = $data["name"];
         $upgrade->Type = $data["type"];
@@ -368,7 +430,7 @@ class Upgrade
             "costlarge" => $data["cost"]["costlarge"]
         );
         return $upgrade;
-    } 
+    }
 
 
 

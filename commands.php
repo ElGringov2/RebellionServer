@@ -14,12 +14,18 @@ if (isset($_GET["fakedb"])) {
     echo "FakeDB filled.<br/><br/>";
 }
 if (isset($_GET["galaxy"])) {
-    Planet . CreateGalaxy();
+    Planet::CreateGalaxy();
 
 }
+if (isset($_GET["draft"])) {
+    config::SetValue("draftmode", $_GET["draft"]);
 
+}
 if (isset($_GET["database"])) {
     CreateDatabases();
+    Commander::GetCommanders(GetMySQLConnection());
+    config::Init();
+
 
 }
 if (isset($_GET["campaign"])) {
@@ -42,11 +48,16 @@ if (isset($_GET["campaign"])) {
 
 <a href='commands.php?fakedb=1'>FakeDB</a>
 <a href='commands.php?galaxy=1'>Reset Galaxy</a>
-<a href='commands.php?database=1'>Reset database</a>
+<a href='commands.php?database=1'>Reset game</a>
 <a href='commands.php?campaign=1'>Create Campaign</a>
 
 
 <?php
+
+if (config::GetValue("draftmode") == 1)
+    echo "<br>DRAFTMODE! <a href='commands.php?draft=0'>Switch to normalmode</a><br>";
+else
+    echo "<br>Normal mode. <a href='commands.php?draft=1'>Switch to draftmode</a><br>";
 function UpdateShips()
 {
     $mysqli = GetMySQLConnection();
@@ -107,7 +118,7 @@ function GenerateCampaign($planetID, $mysqli, $seed)
 {
     srand($seed);
 
-    $mainGame = rand(0,2);
+    $mainGame = rand(0, 2);
 
     for ($iRow = 1; $iRow < 5; $iRow++) {
         $allMissions = Mission::GetAllMission();
@@ -133,7 +144,7 @@ function GenerateCampaign($planetID, $mysqli, $seed)
 
         }
 
-        
+
     }
 
 
@@ -141,7 +152,8 @@ function GenerateCampaign($planetID, $mysqli, $seed)
 }
 
 
-function UpdateCommandos() {
+function UpdateCommandos()
+{
 
     $names = ["Diala Passil", "Fenn Signis", "Gaarkhan", "Gideon Argus", "Jyn Odan", "Mak Eshka'rey", "Biv Bodhrik", "Saska Teft", "Loku Kanoloa", "MHD-19", "Verena Talos", "Drokkatta", "Jarrod Kelvin", "Ko-Tun Feralo"];
 

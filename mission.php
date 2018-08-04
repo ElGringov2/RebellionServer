@@ -161,6 +161,12 @@ class Mission
         $mission->Description = "Capture de ravitaillement pour la cause";
         if ($missionType == -1 || $missionType == $mission->MissionType) $array[] = $mission;
         $mission = new Mission();
+        $mission->Name = "Sabotage des vaporisateurs hydroponique";
+        $mission->MissionType = 1;
+        $mission->Description = "l'Empire tente de saboter des installation de survie rebelle";
+        if ($missionType == -1 || $missionType == $mission->MissionType) $array[] = $mission;
+        
+        $mission = new Mission();
         $mission->Name = "Extraction";
         $mission->MissionType = 2;
         $mission->Description = "Un sénateur à besoin d'informations, et est prêt a payer.";
