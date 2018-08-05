@@ -29,7 +29,7 @@ class Unique
      */
     static function GetIfUniqueExist(string $Name, mysqli $mysqli) : bool
     {
-        $unique = DatabaseRead('unique', $mysqli, "name='$name'");
+        $unique = DatabaseRead('unique', $mysqli, "name='$Name'");
 
         if ($unique == null)
             return false;

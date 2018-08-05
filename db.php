@@ -204,9 +204,10 @@ function DatabaseWrite($object, $mysqli)
     if ($new)
         $sql = $sqlNewLabels . ") VALUES (" . $sqlNewValues . ");";
 
-    if (!$mysqli->query($sql))
-        echo "Erreur: " . $sql . "<br/>" . $mysqli->error;
-
+    if (!$mysqli->query($sql)) {
+        //echo "Erreur: " . $sql . "<br/>" . $mysqli->error;
+        throw new Exception("Erreur SQL: ".$mysqli->error."\nRequete: $sql");
+    }
     if ($id == -1) {
         $id = $mysqli->insert_id;
         $idProperty->setValue($object, $id);

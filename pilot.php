@@ -61,6 +61,11 @@ class Pilot
     public $Ability = "Aucune";
 
     /**
+     * @DatabaseType text
+     * @DatabaseName shipability
+     */
+    public $ShipAbility = "Aucune";
+    /**
      * Le cout
      *
      * @var integer
@@ -155,7 +160,7 @@ class Pilot
 
 
         return sprintf(
-            "<pilot name='%s' shipletter='%s' pilotskill='%s' shipattack='%s' shipagility='%s' shiphull='%s' shipshield='%s' pilotability=\"%s\" shipname='%s' id='%s' cost='%s' condition='%s' squadron=\"%s\" flight=\"%s\"  >%s</pilot>",
+            "<pilot name='%s' shipletter='%s' pilotskill='%s' shipattack='%s' shipagility='%s' shiphull='%s' shipshield='%s' pilotability=\"Pilote: %s &lt;br&gt;Vaisseau: %s\" shipname='%s' id='%s' cost='%s' condition='%s' squadron=\"%s\" flight=\"%s\"  >%s</pilot>",
             $this->Name,
             Pilot::GetShipLetter($this->ShipName),
             $this->Initiative,
@@ -164,6 +169,7 @@ class Pilot
             $this->Hull,
             $this->Shields,
             $this->Ability,
+            $this->ShipAbility,
             $this->ShipName,
             $this->DatabaseID,
             $this->GetTotalCost(),
@@ -196,7 +202,9 @@ class Pilot
         $pilot = new Pilot();
         if (isset($JSONData["ability"]))
             $pilot->Ability = $JSONData["ability"];
-        $pilot->ShipName = $JSONData["ship"];
+        if (isset($JSONData["shipability"]))
+            $pilot->ShipAbility = $JSONData["shipability"];
+        $pilot->ShipName = $JSONData["shipname"];
         if (isset($JSONData["agility"]))
             $pilot->Agility = $JSONData["agility"];
         if (isset($JSONData["attack"]))
@@ -243,12 +251,12 @@ class Pilot
             "ARC-170 Starfighter" => "c",
             "Attack Shuttle" => "g",
             "Auzituck Gunship" => "@",
-            "RZ-1 A-wing" => "a",
-            "A/SF-01 B-wing" => "b",
+            "RZ-1 A-Wing" => "a",
+            "A/SF-01 B-Wing" => "b",
             "bsf17bomber" => "Z",
             "cr90corvette" => "2",
             "croccruiser" => "5",
-            "E-wing" => "e",
+            "E-Wing" => "e",
             "Firespray-class Patrol Craft" => "f",
             "G-1A Starfighter" => "n",
             "gozanticlasscruiser" => "4",
@@ -257,7 +265,7 @@ class Pilot
             "ig2000" => "i",
             "JumpMaster 5000" => "p",
             "Kihraxz Fighter" => "r",
-            "BTL-S8 K-wing" => "k",
+            "BTL-S8 K-Wing" => "k",
             "M12-L Kimogila" => "K",
             "Lambda-class T-4a Shuttle" => "l",
             "Lancer-class Pursuit Craft" => "L",
@@ -285,16 +293,16 @@ class Pilot
             "TIE/sk Striker" => "T",
             "TIE Reaper" => "T",
             "upsilonclassshuttle" => "U",
-            "UT-60D U-wing" => "u",
+            "UT-60D U-Wing" => "u",
             "VCX-100 Light Freighter" => "G",
             "VT-49 Decimator" => "d",
-            "T-65 X-wing" => "x",
+            "T-65 X-Wing" => "x",
             "Modified YT-1300 Light Freighter" => "m",
             "YT-2400 Light Freighter" => "o",
             "Customized YT-1300 Light Freighter" => "m",
             "Escape Craft" => "m",
             "YV-666 Light Freighter" => "t",
-            "BTL-A4 Y-wing" => "y",
+            "BTL-A4 Y-Wing" => "y",
             "Z-95-AF4 Headhunter" => "z",
             "Fang Fighter" => "z"
         );
@@ -317,26 +325,43 @@ class Pilot
         $dict = array();
         foreach ($userCheck as $dbuser) {
             $dict[$dbuser->DatabaseID] = count(DatabaseReadAll("pilot", $mysqli, "owner='{$dbuser->DatabaseID}'"));
+            if ($dbuser->DatabaseID == $user->DatabaseID && $dict[$dbuser->DatabaseID] >= 12)
+                return "<draft done='1' />";
         }
+
+
 
         $dbuser = DatabaseRead('user', $mysqli, "id=" . array_keys($dict, min($dict))[0]);
 
         //echo "dbuser=".$user->DatabaseID.", min=".array_keys($dict, min($dict))[0];
-
-        if ($dbuser->DatabaseID == $user->DatabaseID) {
-            $uniques = DatabaseReadAll('unique', $mysqli);
+        if ($dict[$user->DatabaseID] >= 4) {
             $pilots = Pilot::GetAllShips();
             usort($pilots, function ($a, $b) {
-                if ($a["ship"] == $b["ship"])
+                if ($a["shipname"] == $b["shipname"])
                     return strcmp($a["name"], $b["name"]);
-                return strcmp($a["ship"], $b["ship"]);
+                return strcmp($a["shipname"], $b["shipname"]);
             });
             $str = "<draft>";
             foreach ($pilots as $key => $p) {
-                if ($p["unique"] && $p["faction"] == "Rebel Alliance" && array_search($p["name"], $uniques) === false)
+                if (!$p["unique"] && $p["faction"] == "Rebel Alliance")
                     $str .= Pilot::FromJSON($p, $key)->ToXML();
             }
             return $str . "</draft>";
+        } else if ($dbuser->DatabaseID == $user->DatabaseID) {
+            $uniques = DatabaseReadAll('unique', $mysqli);
+            $pilots = Pilot::GetAllShips();
+            usort($pilots, function ($a, $b) {
+                if ($a["shipname"] == $b["shipname"])
+                    return strcmp($a["name"], $b["name"]);
+                return strcmp($a["shipname"], $b["shipname"]);
+            });
+            $str = "<draft>";
+            foreach ($pilots as $key => $p) {
+                if ($p["unique"] && $p["faction"] == "Rebel Alliance" && Unique::GetIfUniqueExist($p["name"], $mysqli) == false)
+                    $str .= Pilot::FromJSON($p, $key)->ToXML();
+            }
+            return $str . "</draft>";
+
         } else
             return "<draft />";
 

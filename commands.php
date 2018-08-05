@@ -6,6 +6,12 @@ require_once("class.php");
 require_once("FakeDatabaseValues.php");
 
 
+echo Unique::GetIfUniqueExist("Ten Numb", GetMySQLConnection());
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
 
 if (isset($_GET["fakedb"])) {
     CreateDatabases();
@@ -25,6 +31,7 @@ if (isset($_GET["database"])) {
     CreateDatabases();
     Commander::GetCommanders(GetMySQLConnection());
     config::Init();
+    Planet::CreateGalaxy();
 
 
 }

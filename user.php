@@ -64,6 +64,13 @@ class User
      * @DatabaseName vp
      */
     public $VictoryPoints = 0;
+
+
+        /**
+     * @DatabaseType text
+     * @DatabaseName firstsquadronname
+     */
+    public $FirstSquadronName = "";
 }
 
 
