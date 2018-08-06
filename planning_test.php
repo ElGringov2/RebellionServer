@@ -42,7 +42,7 @@ function CreateFakeValues(mysqli $mysqli)
 }
 
 
-$day = Planning::GetDay($mysqli, new DateTime("2018-07-30"));
+$day = Planning::GetDays($mysqli, new DateTime("2018-07-30"));
 
 var_dump($day);
 

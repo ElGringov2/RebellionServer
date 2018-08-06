@@ -43,6 +43,9 @@ class Planning
     public $UserID = -1;
 
 
+    function ToXML() : string {
+        return "<dispo day='" . date_format($this->Day, "d/m") . "' pref='{$this->Preference}' user='{$this->UserName}' />";
+    }
 
 
     /**
@@ -52,7 +55,7 @@ class Planning
      * @param DateTime $date Le jour spécifié (l'heure n'est pas importante)
      * @return array Les infos.
      */
-    static function GetDay(mysqli $mysqli, DateTime $date) : array
+    static function GetDays(mysqli $mysqli, DateTime $date) : array
     {
 
         $array = array();
@@ -67,6 +70,23 @@ class Planning
 
 
         return $array;
+    }
+
+
+
+    static function GetDay(mysqli $mysqli, User $user, DateTime $date) : Planning
+    {
+        $data = DatabaseRead('planning', $mysqli, "day='" . date_format($date, "Y-m-d H:i:s") . "' AND userid='{$user->DatabaseID}'");
+        if ($data == null)
+        {
+            $data = new Planning();
+            $data->Day = $date;
+            $data->Preference = 0;
+            $data->UserID = $user->DatabaseID;
+            $data->UserName = $user->CommanderName;
+            $data->DatabaseID = -1;
+        }
+        return $data;
     }
 
 
