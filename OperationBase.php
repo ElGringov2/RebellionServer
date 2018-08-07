@@ -68,8 +68,4 @@ class OperationBase
     public $TotalCapacity = 0;
 
 
-
-
-
-
 }

@@ -39,7 +39,7 @@ foreach ($planets as $planet) {
             $flight = $asset->Flight." ".$asset->Squadron;
             $fullName = $asset->Squadron . " " . $asset->Flight;
             $color = strtolower($asset->Squadron);
-            $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_$color.png' />";
+            $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_".User::GetColor($asset->Owner).".png' />";
             $offset += 32;
         }
     }

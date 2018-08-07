@@ -66,11 +66,16 @@ class User
     public $VictoryPoints = 0;
 
 
-        /**
+    /**
      * @DatabaseType text
      * @DatabaseName firstsquadronname
      */
     public $FirstSquadronName = "";
+
+
+    public static function GetColor(int $id) {
+        return array(1 => "red", 2=> "blue", 3 => "brown", 4 => "yellow", 5 => "green", 6 => "purple", 7 => "turquoise", 8 => "black")[$id];
+    }
 }
 
 

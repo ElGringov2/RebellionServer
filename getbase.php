@@ -2,14 +2,16 @@
 require_once("class.php");
 
 $mysqli = GetMySQLConnection();
-
+$user = new User();
 $user = DatabaseRead('user', $mysqli, "connectionguid='" . $_POST["guid"] . "'");
+$base = new OperationBase();
 $base = DatabaseRead("operationbase", $mysqli, "owner='{$user->DatabaseID}'");
 
 
 
-$xml = str_replace("operationbase", "opbase", ToXML($base));
-$xml = str_replace("/>", ">", $xml);
+$planet = DatabaseRead('planet', $mysqli, "id=" . $base->PlanetID);
+$xml = "<opbase PlanetName='{$planet->Name}' HangarSize='{$base->HangarSize}' HangarMechanics='{$base->HangarMechanics}' MedbayCapacity='{$base->MedbayCapacity}' MedbayBactaTanks='{$base->MedbayBactaTanks}'  >";
+
 
 
 $grounded = DatabaseReadAll('pilot', $mysqli, "flight='Au sol'");
