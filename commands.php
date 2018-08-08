@@ -5,12 +5,9 @@
 require_once("class.php");
 require_once("FakeDatabaseValues.php");
 
-
-echo Unique::GetIfUniqueExist("Ten Numb", GetMySQLConnection());
-
-echo "<br>";
-echo "<br>";
-echo "<br>";
+$user = DatabaseRead('user', GetMySQLConnection(), "id=1");
+$checkEndDraft = DatabaseReadAll('pilot', GetMySQLConnection(), "owner=".$user->DatabaseID);
+Upgrade::CreateStartUpgrades($user, $checkEndDraft);
 
 
 if (isset($_GET["fakedb"])) {

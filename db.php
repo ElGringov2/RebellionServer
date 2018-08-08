@@ -24,6 +24,7 @@ function CreateDatabases()
 {
     $mysqli = GetMySQLConnection();
     CreateTable('Pilot', $mysqli);
+    CreateTable('Stock', $mysqli);
     CreateTable('unique', $mysqli);
     CreateTable('user', $mysqli);
     CreateTable('commander', $mysqli);
@@ -84,6 +85,13 @@ function CreateTable($object, $mysqli)
         echo "Erreur: " . $sql . "<br/>" . $mysqli->error;
 }
 
+
+function DatabaseRemove($object, mysqli $mysqli)
+{
+    $sql = "DELETE FROM `rebellion_" . strtolower(get_class($object)) . "` WHERE id='" . $object->DatabaseID . "'";
+    if (!$mysqli->query($sql))
+        throw new Exception();
+}
 
 /**
  * Retourne des objets de la base de donnée, selon la clause Where.
@@ -206,7 +214,7 @@ function DatabaseWrite($object, $mysqli)
 
     if (!$mysqli->query($sql)) {
         //echo "Erreur: " . $sql . "<br/>" . $mysqli->error;
-        throw new Exception("Erreur SQL: ".$mysqli->error."\nRequete: $sql");
+        throw new Exception("Erreur SQL: " . $mysqli->error . "\nRequete: $sql");
     }
     if ($id == -1) {
         $id = $mysqli->insert_id;

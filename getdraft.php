@@ -37,6 +37,12 @@ else {
     }
     DatabaseWrite($pilot, $mysqli);
     echo "OK";
+
+
+    $checkEndDraft = DatabaseReadAll('pilot', $mysqli, "owner=".$user->DatabaseID);
+    if (count($checkEndDraft) == 12) {
+        Upgrade::CreateStartUpgrades($user, $checkEndDraft);
+    }
 }
 
 

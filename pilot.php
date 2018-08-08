@@ -80,8 +80,11 @@ class Pilot
     {
 
         $upgradeCost = $this->Cost;
-        foreach ($this->Upgrades as $upgrade)
+        foreach ($this->Upgrades as $upgrade) {
+            if (!is_a($upgrade, "Upgrade"))
+                $upgrade = Upgrade::FromJSONArray($upgrade);
             $upgradeCost += $upgrade->GetCost($this);
+        }
         return $upgradeCost;
     }
 
@@ -152,7 +155,10 @@ class Pilot
     {
 
         $upgradeStr = "<upgrades>";
+        $upgrade = new Upgrade();
         foreach ($this->Upgrades as $upgrade) {
+            if (!is_a($upgrade, "Upgrade"))
+                $upgrade = Upgrade::FromJSONArray($upgrade);
             $upgradeStr .= $upgrade->ToXML($this);
         }
         $upgradeStr .= "</upgrades>";
@@ -372,6 +378,67 @@ class Pilot
 }
 
 
+class Stock
+{
+    /**
+     * @DatabaseType text
+     * @DatabaseName name
+     */
+    public $Name;
+
+    /**
+     * @DatabaseType int(10)
+     * @DatabaseName id
+     * @DatabasePrimary
+     */
+    public $DatabaseID = -1;
+
+    /**
+     * @DatabaseType text
+     * @DatabaseName xws
+     */
+    public $XWS;
+
+    /**
+     * @DatabaseType int(10)
+     * @DatabaseName owner
+     */
+    public $Owner = -1;
+
+    static function FromUpgradeJSON(array $json, int $OwnerID) : Stock
+    {
+        $stock = new Stock();
+        $stock->Name = $json["name"];
+        $stock->XWS = $json["xws"];
+        $stock->Owner = $OwnerID;
+        return $stock;
+    }
+
+    static function MergeStock(array &$a1, array $a2)
+    {
+        foreach ($a2 as $item) {
+            if (!$item["unique"] && Stock::objArraySearch($a1, "xws", $item["xws"]) == null)
+                $a1[] = $item;
+        }
+
+    }
+
+
+    private static function objArraySearch($array, $index, $value)
+    {
+        foreach ($array as $arrayInf) {
+            if ($arrayInf[$index] == $value) {
+                return $arrayInf;
+            }
+        }
+        return null;
+    }
+
+
+
+}
+
+
 class Upgrade
 {
     /**
@@ -419,16 +486,25 @@ class Upgrade
      * La capacitée
      * @var string
      */
-    public $Desc = "";
+    public $Desc = "Description";
 
     function ToXML(Pilot $parent)
     {
+        $index = 0;
+        foreach ($parent->Upgrades as $key => $element) {
+            if ($element == $this) {
+                break;
+            }
+            $index++;
+        }
+
         return sprintf(
-            "<upgrade name='%s' cost='%i' type='%s' desc='%s' />",
+            "<upgrade name='%s' cost='%i' type='%s' desc='%s' index='%i' />",
             $this->Name,
             $this->GetCost($parent),
             $this->Type,
-            $this->Desc
+            $this->Desc,
+            $index
         );
     }
 
@@ -439,6 +515,42 @@ class Upgrade
         return $data["upgrades"];
     }
 
+    static function GetAllInstallableUpgrade(Pilot $pilot, mysqli $mysqli) : array
+    {
+        $stock = Upgrade::GetAllUpgrades();
+        $array = array();
+        foreach ($stock as $item) {
+            $up = Upgrade::FromJSONArray($item);
+            if (Unique::GetIfUniqueExist($up->Name, $mysqli)) continue;
+            $slot = new Upgrade();
+            foreach ($pilot->Upgrades as $slot) {
+                if ($slot->Type == $up->Type) {
+                    $array[] = $item;
+                    break;
+                }
+            }
+        }
+        return $array;
+    }
+
+    static function GetMyInstallableStock(Pilot $pilot, User $user, mysqli $mysqli) : array
+    {
+        $stock = DatabaseReadAll('stock', $mysqli, "owner='{$user->DatabaseID}'");
+        $upgrades = Upgrade::GetAllUpgrades();
+        $array = array();
+        $item = new Stock();
+        foreach ($stock as $item) {
+            $slot = new Upgrade();
+            $upgradeItem = $upgrades[array_search($item->XWS, array_column($upgrades, "xws"))];
+            foreach ($pilot->Upgrades as $slot) {
+                if ($slot->Type == $upgradeItem["type"]) {
+                    $array[] = Upgrade::FromJSONArray($upgradeItem);
+                    break;
+                }
+            }
+        }
+        return $array;
+    }
 
     static function FromJSONArray($data) : Upgrade
     {
@@ -457,6 +569,27 @@ class Upgrade
         return $upgrade;
     }
 
+
+    static function CreateStartUpgrades(user $user, array $Pilots)
+    {
+        $stock = array();
+        foreach ($Pilots as $p)
+            Stock::MergeStock($stock, Upgrade::GetAllInstallableUpgrade($p, GetMySQLConnection()));
+
+
+        usort($stock, function ($a, $b) {
+            if ($a["type"] == $b["type"])
+                return strcmp($a["name"], $b["name"]);
+            return strcmp($a["type"], $b["type"]);
+        });
+
+        for ($i = 0; $i < 36; $i++) {
+            $index = array_rand($stock);
+            $item = Stock::FromUpgradeJSON($stock[$index], $user->DatabaseID);
+            DatabaseWrite($item, GetMySQLConnection());
+        }
+
+    }
 
 
 }
