@@ -4,7 +4,7 @@ require_once("class.php");
 $mysqli = GetMySQLConnection();
 
 $user = DatabaseRead('user', $mysqli, "connectionguid='" . $_POST["guid"] . "'");
-
+$squadron = $_POST["squadron"];
 
 
 echo "<newflight id='1'>";
