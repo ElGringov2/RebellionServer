@@ -7,7 +7,7 @@ $user = DatabaseRead('user', $mysqli, "connectionguid='" . $_POST["guid"] . "'")
 $squadron = $_POST["squadron"];
 
 
-echo "<newflight id='1'>";
+echo "<newflight>";
 
 $ships = DatabaseReadAll('pilot', $mysqli, "flight='Au sol'");
 echo "<ships>";

@@ -7,7 +7,7 @@ $user = DatabaseRead('user', $mysqli, "connectionguid='" . $_POST["guid"] . "'")
 
 $planet = DatabaseRead("planet", $mysqli, "id=" . $_POST["planetGUID"]);
 $history = "Pas d'historique pour l'instant.";
-echo "<planet name=\"{$planet->Name}\" description=\"{$planet->Description}\" image=\"{$planet->Image}\" history=\"$history\" >";
+echo "<planet name=\"{$planet->Name}\" description=\"{$planet->Description}\" planetid='{$planet->DatabaseID}' image=\"{$planet->Image}\" history=\"$history\" >";
 
 echo "<buildings>";
 
@@ -87,6 +87,49 @@ foreach ($campaign as $mission) {
     echo ToXML($mission);
 }
 echo "</campaign>";
+
+
+
+
+
+echo "<actions>";
+
+//Déplacement?
+$PilotAssets = DatabaseReadAll('pilot', $mysqli, "owner = '{$user->DatabaseID}' and location !='{$planet->DatabaseID}' AND flight != 'Au sol'");
+$pilot = new Pilot(); //typehint
+$flightName = "";
+foreach ($PilotAssets as $pilot) {
+    if ($flightName != $pilot->Flight) {
+        $flightName = $pilot->Flight;
+        $flightplanet = new Planet();
+        $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $pilot->Location);
+        $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
+        echo "<action type='move' asset=\"" . htmlspecialchars($pilot->Flight, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='flight' time='$distance' />";
+    }
+}
+
+$PilotAssets = DatabaseReadAll('pilot', $mysqli, "owner = '{$user->DatabaseID}' and flight = 'Au sol'");
+$pilot = new Pilot(); //typehint
+foreach ($PilotAssets as $pilot) {
+    $flightplanet = new Planet();
+    $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $pilot->Location);
+    $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
+    echo "<action type='move' asset=\"" . htmlspecialchars($pilot->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='pilot' time='$distance' />";
+}
+
+$AssaultAssets = DatabaseReadAll('commando', $mysqli, "owner = '{$user->DatabaseID}' and location !='{$planet->DatabaseID}'");
+$commando = new Commando(); //typehint
+foreach ($AssaultAssets as $commando) {
+    $flightplanet = new Planet();
+    $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $commando->Location);
+    $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
+    echo "<action type='move' asset=\"" . htmlspecialchars($commando->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$commando->DatabaseID}' assettype=\"assault\" time='$distance' />";
+}
+
+
+
+echo "</actions>";
+
 
 echo "</planet>";
 ?>

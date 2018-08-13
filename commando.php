@@ -36,6 +36,11 @@ class Commando
   public $Experience = 0;
 
   /**
+   * @DatabaseType text
+   * @DatabaseName currentorder
+   */
+  public $CurrentOrder;
+  /**
    * @DatabaseType int(3)
    * @DatabaseName defwhite
    */

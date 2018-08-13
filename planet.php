@@ -58,6 +58,9 @@ class Planet
     }
 
 
+    public static function GetDistance(Planet $a, Planet $b) : float {
+        return 30;
+    }
 
     static function CreateGalaxy()
     {

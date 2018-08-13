@@ -81,15 +81,7 @@ if (isset($_POST["ship"])) { //Selection d'un vaisseau, envoi des upgrades possi
         DatabaseWrite($pilot, $mysqli);
     }
 } else if (isset($_POST["takeoff"])) { //Validation de l'escouade
-    $flights = $mysqli->query("SELECT DISTINCT flight FROM rebellion_pilot WHERE owner='{$user->DatabaseID}' AND squadron='{$_POST["squadron"]}'");
-    $flightNumber = 0;
-    while ($row = $flights->fetch_assoc()) {
-        if (intval(preg_replace("/\D/", "", $row["flight"])) > $flightNumber)
-            $flightNumber = intval(preg_replace("/\D/", "", $row["flight"]));
-
-    }
-    $flightNumber++;
-
+    $flightNumber = Pilot::GetNextFlightNumber($_POST["squadron"], $mysqli);
     $mysqli->query("UPDATE rebellion_pilot SET flight='Escadrille $flightNumber' WHERE owner='{$user->DatabaseID}' AND flight='TakeOff'");
 
 

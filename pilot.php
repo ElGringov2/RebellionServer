@@ -49,6 +49,12 @@ class Pilot
     public $Owner;
 
     /**
+     * @DatabaseType text
+     * @DatabaseName currentorder
+     */
+    public $CurrentOrder = "IDLE";
+
+    /**
      * @DatabaseType int(2)
      * @DatabaseName condition
      */
@@ -374,6 +380,19 @@ class Pilot
 
 
 
+    }
+
+
+    public static function GetNextFlightNumber(string $SquadronName, $mysqli) : int
+    {
+        $flights = $mysqli->query("SELECT DISTINCT flight FROM rebellion_pilot WHERE squadron='{$SquadronName}'");
+        $flightNumber = 0;
+        while ($row = $flights->fetch_assoc()) {
+            if (intval(preg_replace("/\D/", "", $row["flight"])) > $flightNumber)
+                $flightNumber = intval(preg_replace("/\D/", "", $row["flight"]));
+
+        }
+        return $flightNumber + 1;
     }
 }
 
