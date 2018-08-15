@@ -99,12 +99,12 @@ $PilotAssets = DatabaseReadAll('pilot', $mysqli, "owner = '{$user->DatabaseID}' 
 $pilot = new Pilot(); //typehint
 $flightName = "";
 foreach ($PilotAssets as $pilot) {
-    if ($flightName != $pilot->Flight) {
-        $flightName = $pilot->Flight;
+    if ($flightName != $pilot->Squadron." ".$pilot->Flight) {
+        $flightName = $pilot->Squadron." ".$pilot->Flight;
         $flightplanet = new Planet();
         $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $pilot->Location);
         $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
-        echo "<action type='move' asset=\"" . htmlspecialchars($pilot->Flight, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='flight' time='$distance' />";
+        echo "<action type='move'  icon='./flight.png' name='$flightName' asset=\"" . htmlspecialchars($pilot->Flight, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='flight' time='$distance' />";
     }
 }
 
@@ -114,7 +114,7 @@ foreach ($PilotAssets as $pilot) {
     $flightplanet = new Planet();
     $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $pilot->Location);
     $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
-    echo "<action type='move' asset=\"" . htmlspecialchars($pilot->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='pilot' time='$distance' />";
+    echo "<action type='move' icon='./flight_red.png' name='{$pilot->Name}' asset=\"" . htmlspecialchars($pilot->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='pilot' time='$distance' />";
 }
 
 $AssaultAssets = DatabaseReadAll('commando', $mysqli, "owner = '{$user->DatabaseID}' and location !='{$planet->DatabaseID}'");
@@ -123,7 +123,7 @@ foreach ($AssaultAssets as $commando) {
     $flightplanet = new Planet();
     $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $commando->Location);
     $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
-    echo "<action type='move' asset=\"" . htmlspecialchars($commando->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$commando->DatabaseID}' assettype=\"assault\" time='$distance' />";
+    echo "<action type='move' icon='{$commando->GetPortrait()}' name='{$commando->Name}' asset=\"" . htmlspecialchars($commando->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$commando->DatabaseID}' assettype=\"assault\" time='$distance' />";
 }
 
 

@@ -35,23 +35,37 @@ foreach ($planets as $planet) {
     $assets = DatabaseReadAll("pilot", $mysqli, "location='{$planet->DatabaseID}' and owner='{$user->DatabaseID}'  ORDER BY squadron ASC, flight ASC");
     foreach ($assets as $asset) {
         $knownPlanet = true;
-        if ($asset->Flight." ".$asset->Squadron != $flight) {
-            $flight = $asset->Flight." ".$asset->Squadron;
+        if ($asset->Flight . " " . $asset->Squadron != $flight) {
+            $flight = $asset->Flight . " " . $asset->Squadron;
             $fullName = $asset->Squadron . " " . $asset->Flight;
             $color = strtolower($asset->Squadron);
-            $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_".User::GetColor($asset->Owner).".png' />";
+            $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_" . User::GetColor($asset->Owner) . ".png' ";
+            if (substr($asset->CurrentOrder, 0, 4) == "MOVE") {
+                $targetPlanet = DatabaseRead('planet', $mysqli, 'id='.str_replace("MOVE", "", $asset->CurrentOrder));
+                $movex = $targetPlanet->GetX($minX, $minY, $maxX, $maxY);
+                $movey = $targetPlanet->GetY($minX, $minY, $maxX, $maxY);
+                $icons .= "action='move' movetox='$movex' movetoy='$movey' ";
+            }
+            $icons .= "/>";
             $offset += 32;
         }
     }
+    $asset = new Commando(); //typehint
 
     $assets = DatabaseReadAll("commando", $mysqli, "location='{$planet->DatabaseID}' and owner='{$user->DatabaseID}'");
     foreach ($assets as $asset) {
         $knownPlanet = true;
-        
 
-            $icons .= "\n<icon name=\"{$asset->Name}\" x='$x' y='$y' offset='$offset' icon='{$asset->GetPortrait()}' />";
-            $offset += 32;
-        
+
+        $icons .= "\n<icon name=\"{$asset->Name}\" x='$x' y='$y' offset='$offset' icon='{$asset->GetPortrait()}' ";
+        if (substr($asset->CurrentOrder, 0, 4) == "MOVE") {
+            $targetPlanet = DatabaseRead('planet', $mysqli, 'id='.str_replace("MOVE", "", $asset->CurrentOrder));
+            $movex = $targetPlanet->GetX($minX, $minY, $maxX, $maxY);
+            $movey = $targetPlanet->GetY($minX, $minY, $maxX, $maxY);
+            $icons .= "action='move' movetox='$movex' movetoy='$movey' ";
+        }
+        $icons .= "/>";
+        $offset += 32;
     }
     $base = DatabaseRead("operationbase", $mysqli, "planetid='{$planet->DatabaseID}' and owner='{$user->DatabaseID}'");
     if ($base != null) {
@@ -63,11 +77,18 @@ foreach ($planets as $planet) {
     if ($knownPlanet) {
         $assets = DatabaseReadAll("pilot", $mysqli, "location='{$planet->DatabaseID}' and owner!='{$user->DatabaseID}' ORDER BY squadron ASC, flight ASC");
         foreach ($assets as $asset) {
-            if ($asset->Flight." ".$asset->Squadron != $flight) {
-                $flight = $asset->Flight." ".$asset->Squadron;
+            if ($asset->Flight . " " . $asset->Squadron != $flight) {
+                $flight = $asset->Flight . " " . $asset->Squadron;
                 $fullName = $asset->Squadron . " " . $asset->Flight;
                 $color = strtolower($asset->Squadron);
-                $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_$color.png' />";
+                $icons .= "\n<icon name=\"Escadron $fullName\" x='$x' y='$y' offset='$offset' icon='./flight_$color.png' ";
+                if (substr($asset->CurrentOrder, 0, 4) == "MOVE") {
+                    $targetPlanet = DatabaseRead('planet', $mysqli, 'id='.str_replace("MOVE", "", $asset->CurrentOrder));
+                    $movex = $targetPlanet->GetX($minX, $minY, $maxX, $maxY);
+                    $movey = $targetPlanet->GetY($minX, $minY, $maxX, $maxY);
+                    $icons .= "action='move' movetox='$movex' movetoy='$movey' ";
+                }
+                $icons .= "/>";
                 $offset += 32;
             }
         }
@@ -79,11 +100,18 @@ foreach ($planets as $planet) {
         $assets = DatabaseReadAll("commando", $mysqli, "location='{$planet->DatabaseID}' and owner!='{$user->DatabaseID}'");
         foreach ($assets as $asset) {
             $knownPlanet = true;
-            
-    
-                $icons .= "\n<icon name=\"{$asset->Name}\" x='$x' y='$y' offset='$offset' icon='{$asset->GetPortrait()}' />";
-                $offset += 32;
-            
+
+
+            $icons .= "\n<icon name=\"{$asset->Name}\" x='$x' y='$y' offset='$offset' icon='{$asset->GetPortrait()}' ";
+            if (substr($asset->CurrentOrder, 0, 4) == "MOVE") {
+                $targetPlanet = DatabaseRead('planet', $mysqli, 'id='.str_replace("MOVE", "", $asset->CurrentOrder));
+                $movex = $targetPlanet->GetX($minX, $minY, $maxX, $maxY);
+                $movey = $targetPlanet->GetY($minX, $minY, $maxX, $maxY);
+                $icons .= "action='move' movetox='$movex' movetoy='$movey' ";
+            }
+            $icons .= "/>";
+            $offset += 32;
+
         }
     }
 }
