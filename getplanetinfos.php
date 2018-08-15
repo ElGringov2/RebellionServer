@@ -94,13 +94,27 @@ echo "</campaign>";
 
 echo "<actions>";
 
+
+//missions?
+$missions = DatabaseReadAll('mission', $mysqli, 'planet=' . $planet->DatabaseID);
+$pilotsOnPlanet = DatabaseReadAll('pilot', $mysqli, 'location=' . $planet->DatabaseID);
+$commandosOnPlanet = DatabaseReadAll('commando', $mysqli, 'location=' . $planet->DatabaseID);
+
+if (count($missions) == 0) {
+
+    if (count($pilotsOnPlanet) != 0)
+        echo "<action type='discover' assettype='pilot' icon='./logoxwing.png' name='Generer une campagne X-Wing' /> ";
+    if (count($commandosOnPlanet) != 0)
+        echo "<action type='discover' assettype='assault' icon='./assautempire.png' name='Generer une campagne Assaut sur l'Empire' /> ";
+}
+
 //Déplacement?
 $PilotAssets = DatabaseReadAll('pilot', $mysqli, "owner = '{$user->DatabaseID}' and location !='{$planet->DatabaseID}' AND flight != 'Au sol'");
 $pilot = new Pilot(); //typehint
 $flightName = "";
 foreach ($PilotAssets as $pilot) {
-    if ($flightName != $pilot->Squadron." ".$pilot->Flight) {
-        $flightName = $pilot->Squadron." ".$pilot->Flight;
+    if ($flightName != $pilot->Squadron . " " . $pilot->Flight) {
+        $flightName = $pilot->Squadron . " " . $pilot->Flight;
         $flightplanet = new Planet();
         $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $pilot->Location);
         $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
@@ -109,14 +123,14 @@ foreach ($PilotAssets as $pilot) {
 }
 
 $PilotAssets = DatabaseReadAll('pilot', $mysqli, "owner = '{$user->DatabaseID}' and flight = 'Au sol'");
-$pilot = new Pilot(); //typehint
-foreach ($PilotAssets as $pilot) {
-    $flightplanet = new Planet();
-    $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $pilot->Location);
-    $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
-    echo "<action type='move' icon='./flight_red.png' name='{$pilot->Name}' asset=\"" . htmlspecialchars($pilot->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='pilot' time='$distance' />";
+if (DatabaseRead("operationbase", $mysqli, 'owner=' . $user->DatabaseID)->PlanetID != $planet->DatabaseID) {
+    foreach ($PilotAssets as $pilot) {
+        $flightplanet = new Planet();
+        $flightplanet = DatabaseRead('planet', $mysqli, "id=" . $pilot->Location);
+        $distance = round(Planet::GetDistance($planet, $flightplanet) / 10);
+        echo "<action type='move' icon='./flight_red.png' name='{$pilot->Name}' asset=\"" . htmlspecialchars($pilot->Name, ENT_XML1, 'UTF-8') . "\" dbid='{$pilot->DatabaseID}' assettype='pilot' time='$distance' />";
+    }
 }
-
 $AssaultAssets = DatabaseReadAll('commando', $mysqli, "owner = '{$user->DatabaseID}' and location !='{$planet->DatabaseID}'");
 $commando = new Commando(); //typehint
 foreach ($AssaultAssets as $commando) {

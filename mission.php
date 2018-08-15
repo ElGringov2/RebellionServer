@@ -165,7 +165,7 @@ class Mission
         $mission->MissionType = 1;
         $mission->Description = "l'Empire tente de saboter des installation de survie rebelle";
         if ($missionType == -1 || $missionType == $mission->MissionType) $array[] = $mission;
-        
+
         $mission = new Mission();
         $mission->Name = "Extraction";
         $mission->MissionType = 2;
@@ -377,6 +377,50 @@ class Mission
         $mission->Description = "En attente de la V2";
         if ($missionType == -1 || $missionType == $mission->MissionType) $array[] = $mission;
         return $array;
+    }
+
+
+
+    /**
+     * 
+     */
+    public static function GenerateCampaign(int $planetID, int $mainGame, mysqli $mysqli)
+    {
+
+
+
+        for ($iRow = 1; $iRow < 5; $iRow++) {
+
+            $otherMission = rand(2, 4);
+
+            $allMissions = Mission::GetAllMission();
+            $mainMissions = Mission::GetAllMission($mainGame);
+            $Mission = $mainMissions[array_rand($mainMissions)];
+            $Mission->Row = $iRow;
+            $Mission->Col = 1;
+            $Mission->PlanetID = $planetID;
+
+
+
+            DatabaseWrite($Mission, $mysqli);
+
+
+
+            for ($iCol = 2; $iCol <= $otherMission; $iCol++) {
+                $Mission = $allMissions[array_rand($allMissions)];
+                $Mission->Row = $iRow;
+                $Mission->Col = $iCol;
+                $Mission->PlanetID = $planetID;
+
+                DatabaseWrite($Mission, $mysqli);
+
+            }
+
+
+        }
+
+
+
     }
 
 }
